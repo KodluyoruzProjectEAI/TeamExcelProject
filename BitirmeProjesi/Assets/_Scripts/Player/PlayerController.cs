@@ -5,8 +5,8 @@ using UnityEngine;
 public class PlayerController : PlayerData
 {
     PlayerController _playerController;
-    HorizontalMover _horizontalMover;
     PlayerInput _playerInput;
+    IHorizontalMover _IhorizontalMover;
     
     float inputHorValue;
     
@@ -14,7 +14,7 @@ public class PlayerController : PlayerData
     {
         _playerController = GetComponent<PlayerController>();
         _playerInput = GetComponent<PlayerInput>();
-        _horizontalMover = new HorizontalMover(this);
+        _IhorizontalMover = new HorizontalMover(this);
     }
     void Update()
     {
@@ -24,7 +24,7 @@ public class PlayerController : PlayerData
     {
         if (IsHorizontal)
         {
-            _horizontalMover.Active(inputHorValue, HorizontalSpeed, BoundX);
+            _IhorizontalMover.Active(inputHorValue, HorizontalSpeed, BoundX);
         }
     }
 }
