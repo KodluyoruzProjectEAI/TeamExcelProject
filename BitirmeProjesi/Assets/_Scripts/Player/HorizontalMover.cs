@@ -5,7 +5,6 @@ using UnityEngine;
 public class HorizontalMover : MonoBehaviour
 {
     PlayerController _playerController;
-    float BoundX;
     public HorizontalMover(PlayerController playerController)
     {
         _playerController = playerController;
@@ -17,8 +16,8 @@ public class HorizontalMover : MonoBehaviour
             return;
         }
         _playerController.transform.Translate(Vector3.right * inputHorValue * horizontalSpeed * Time.deltaTime );
-        BoundX = Mathf.Clamp(_playerController.transform.position.x, -moveBoundary, moveBoundary);
+        float BoundX = Mathf.Clamp(_playerController.transform.position.x, -moveBoundary, moveBoundary);
         _playerController.transform.position = new Vector3(BoundX, _playerController.transform.position.y, _playerController.transform.position.z);
     }
 }
-}
+
