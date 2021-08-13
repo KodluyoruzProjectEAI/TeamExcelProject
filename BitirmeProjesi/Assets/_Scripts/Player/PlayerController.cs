@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerController : PlayerData
+public class PlayerController : PlayerData,IEntityController
 {
-    PlayerController _playerController;
     PlayerInput _playerInput;
+    IEntityController _playerController;
     IHorizontalMover _IhorizontalMover;
     
     float inputHorValue;
@@ -22,9 +22,7 @@ public class PlayerController : PlayerData
     }
     void FixedUpdate()
     {
-        if (IsHorizontal)
-        {
-            _IhorizontalMover.Active(inputHorValue, HorizontalSpeed, BoundX);
-        }
+        Debug.Log(inputHorValue);
+        _IhorizontalMover.Active(inputHorValue);
     }
 }

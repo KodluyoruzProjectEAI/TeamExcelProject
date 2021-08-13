@@ -5,7 +5,6 @@ public class PlayerInput : MonoBehaviour
     private Vector2 startPos;
     private Vector2 direction;
     private int inputInt;
-    
 
     public int GetMoveInput()
     {
@@ -37,7 +36,6 @@ public class PlayerInput : MonoBehaviour
             }
                 
         }
-        
         return inputInt;
     }
 }

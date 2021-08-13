@@ -4,7 +4,11 @@ using UnityEngine;
 
 public class PlayerData : MonoBehaviour
 {
-    public bool IsHorizontal { get; set; }
+    [field: SerializeField]
     public float HorizontalSpeed { get; set; }
+
+    [field: SerializeField]
     public float BoundX { get; set; }
+    public bool IsHorizontal { get; set; }
+
 }

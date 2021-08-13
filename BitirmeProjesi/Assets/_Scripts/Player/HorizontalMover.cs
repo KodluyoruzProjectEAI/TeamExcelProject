@@ -4,20 +4,25 @@ using UnityEngine;
 
 public class HorizontalMover : IHorizontalMover
 {
-    PlayerController _playerController;
-    public HorizontalMover(PlayerController playerController)
+    IEntityController _entityController;
+    float horizontalSpeed;
+    float moveBoundary;
+    public HorizontalMover(IEntityController entityController)
     {
-        _playerController = playerController;
+        _entityController = entityController;
+        horizontalSpeed = entityController.HorizontalSpeed;
+        moveBoundary = entityController.BoundX;
     }
-    public void Active(float inputHorValue,float horizontalSpeed,float moveBoundary)
+    public void Active(float inputHorValue)
     {
+        Debug.Log("input:" + inputHorValue + ",horSpeed:" + horizontalSpeed + ",Bound:" + moveBoundary);
         if (inputHorValue == 0)
         {
             return;
         }
-        _playerController.transform.Translate(Vector3.right * inputHorValue * horizontalSpeed * Time.deltaTime );
-        float BoundX = Mathf.Clamp(_playerController.transform.position.x, -moveBoundary, moveBoundary);
-        _playerController.transform.position = new Vector3(BoundX, _playerController.transform.position.y, _playerController.transform.position.z);
+        _entityController.transform.Translate(Vector3.right * inputHorValue * horizontalSpeed * Time.deltaTime );
+        float BoundX = Mathf.Clamp(_entityController.transform.position.x, -moveBoundary, moveBoundary);
+        _entityController.transform.position = new Vector3(BoundX, _entityController.transform.position.y, _entityController.transform.position.z);
     }
 }
 
