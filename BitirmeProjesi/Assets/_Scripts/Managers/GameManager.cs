@@ -42,7 +42,7 @@ public class GameManager : ASingleton<GameManager>
                     break;
             }
         }
-        //Duruma göre true/false gönderiyor
+        //Duruma gÃ¶re true/false gÃ¶nderiyor
         public static bool GetCurrentState(string get)
         {
         switch (get)
