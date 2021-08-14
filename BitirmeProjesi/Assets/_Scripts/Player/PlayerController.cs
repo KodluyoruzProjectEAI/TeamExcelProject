@@ -8,6 +8,7 @@ public class PlayerController : PlayerData,IEntityController
     IEntityController _playerController;
     IHorizontalMover _IhorizontalMover;
     IVerticalMover _IverticalMover;
+    IPlayerSkills _IplayerSkills;
     float inputHorValue;
    
     void Awake()
@@ -16,6 +17,7 @@ public class PlayerController : PlayerData,IEntityController
         _playerInput = GetComponent<PlayerInput>();
         _IhorizontalMover = new HorizontalMover(this);
         _IverticalMover = new VerticalMover(this);
+        _IplayerSkills = new PlayerSkills(this);
     }
     void Update()
     {
@@ -26,4 +28,14 @@ public class PlayerController : PlayerData,IEntityController
         _IhorizontalMover.Active(inputHorValue,HorizontalSpeed);
         _IverticalMover.Active(VerticalSpeed);
     }
+    void OnTriggerEnter(Collider collider)
+    {
+        switch (collider.tag)
+        {
+            case "SpeedUp":
+              _IplayerSkills.AddSpeed(30f);
+                break;
+        }
+    }
+
 }

@@ -7,4 +7,5 @@ public interface IEntityController
     Rigidbody rb { get; }
     Transform transform { get; }
     float BoundX { get; }
+    public float VerticalSpeed{ get; set; }
 }
