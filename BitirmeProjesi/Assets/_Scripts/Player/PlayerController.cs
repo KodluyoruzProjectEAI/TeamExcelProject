@@ -7,14 +7,15 @@ public class PlayerController : PlayerData,IEntityController
     PlayerInput _playerInput;
     IEntityController _playerController;
     IHorizontalMover _IhorizontalMover;
-    
+    IVerticalMover _IverticalMover;
     float inputHorValue;
-    
+   
     void Awake()
-    {
+    {   
         _playerController = GetComponent<PlayerController>();
         _playerInput = GetComponent<PlayerInput>();
         _IhorizontalMover = new HorizontalMover(this);
+        _IverticalMover = new VerticalMover(this);
     }
     void Update()
     {
@@ -22,7 +23,7 @@ public class PlayerController : PlayerData,IEntityController
     }
     void FixedUpdate()
     {
-        Debug.Log(inputHorValue);
         _IhorizontalMover.Active(inputHorValue);
+        _IverticalMover.Active();
     }
 }

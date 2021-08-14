@@ -8,7 +8,12 @@ public class PlayerData : MonoBehaviour
     public float HorizontalSpeed { get; set; }
 
     [field: SerializeField]
+    public float VerticalSpeed { get; set; }
+
+    [field: SerializeField]
     public float BoundX { get; set; }
     public bool IsHorizontal { get; set; }
+
+    public Rigidbody rb => GetComponent<Rigidbody>();
 
 }
