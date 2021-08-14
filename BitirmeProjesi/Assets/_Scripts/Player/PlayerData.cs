@@ -13,7 +13,6 @@ public class PlayerData : MonoBehaviour
     [field: SerializeField]
     public float BoundX { get; set; }
     public bool IsHorizontal { get; set; }
-
     public Rigidbody rb => GetComponent<Rigidbody>();
 
 }

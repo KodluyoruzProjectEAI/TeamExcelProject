@@ -5,15 +5,13 @@ using UnityEngine;
 public class HorizontalMover : IHorizontalMover
 {
     IEntityController _entityController;
-    float horizontalSpeed;
     float moveBoundary;
     public HorizontalMover(IEntityController entityController)
     {
         _entityController = entityController;
-        horizontalSpeed = entityController.HorizontalSpeed;
         moveBoundary = entityController.BoundX;
     }
-    public void Active(float inputHorValue)
+    public void Active(float inputHorValue,float horizontalSpeed)
     {
         Debug.Log("input:" + inputHorValue + ",horSpeed:" + horizontalSpeed + ",Bound:" + moveBoundary);
         if (inputHorValue == 0)

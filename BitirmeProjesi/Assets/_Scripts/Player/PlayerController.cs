@@ -23,7 +23,7 @@ public class PlayerController : PlayerData,IEntityController
     }
     void FixedUpdate()
     {
-        _IhorizontalMover.Active(inputHorValue);
-        _IverticalMover.Active();
+        _IhorizontalMover.Active(inputHorValue,HorizontalSpeed);
+        _IverticalMover.Active(VerticalSpeed);
     }
 }

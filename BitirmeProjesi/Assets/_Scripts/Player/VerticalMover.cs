@@ -6,16 +6,13 @@ public class VerticalMover : IVerticalMover
 {
     IEntityController _entityController;
     Rigidbody rb;
-    float verticalSpeed;
     public VerticalMover(IEntityController entityController)
     {
         _entityController = entityController;
-        verticalSpeed = entityController.VerticalSpeed;
         rb = entityController.rb;
     }
-    public void Active()
+    public void Active(float speed)
     {
-        Debug.Log(verticalSpeed);
-        rb.AddForce(Vector3.forward * verticalSpeed * Time.deltaTime);
+        rb.AddForce(Vector3.forward * speed * Time.deltaTime * 10);
     }
 }

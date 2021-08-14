@@ -4,5 +4,5 @@ using UnityEngine;
 
 public interface IVerticalMover
 {
-    void Active();
+    void Active(float speed);
 }
