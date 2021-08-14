@@ -7,10 +7,10 @@ namespace Player.Scripts
       public Animator animator;
       private static readonly int RunningID = Animator.StringToHash("Running");
       private static readonly int IdleID = Animator.StringToHash("idle");
-      private static readonly int InjuredRunID = Animator.StringToHash("InjuredRun");
-      private static readonly int DeadID = Animator.StringToHash("DeadID");
+      private static readonly int InjuredRunID = Animator.StringToHash("Injured");
+      private static readonly int DeadID = Animator.StringToHash("Dead");
       private static readonly int DanceID = Animator.StringToHash("Dance");
-      private static readonly int SlideRunID = Animator.StringToHash("SlideRunID");
+      private static readonly int SlideRunID = Animator.StringToHash("SlideRun");
 
       public void Idle()
       {
