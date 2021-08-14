@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="e54f803a-6ecf-4e3e-b461-75f1cd9ec03d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.BitirmeProjesi/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BitirmeProjesi/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Game.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Game.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Managers/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Managers/GameManager.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -21,7 +20,9 @@
       <option value="$PROJECT_DIR$/Assets/_Scripts/GameManager.cs" />
       <option value="$PROJECT_DIR$/Assets/_Scripts/HorizontalMover.cs" />
       <option value="$PROJECT_DIR$/Assets/_Scripts/Player/PlayerController.cs" />
+      <option value="$PROJECT_DIR$/Assets/_Scripts/Managers/AnimationManager.cs" />
       <option value="$PROJECT_DIR$/Assets/Player/Scripts/AnimationController.cs" />
+      <option value="$PROJECT_DIR$/Assets/_Scripts/Managers/GameManager.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1waq52m88hEldhxKuAx736gE18f" />
@@ -71,7 +72,7 @@
       <workItem from="1628865357312" duration="1673000" />
       <workItem from="1628885481172" duration="44000" />
       <workItem from="1628885559492" duration="1000" />
-      <workItem from="1628945082228" duration="3220000" />
+      <workItem from="1628945082228" duration="4859000" />
     </task>
     <servers />
   </component>

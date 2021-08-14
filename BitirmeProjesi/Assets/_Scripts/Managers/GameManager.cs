@@ -1,9 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
+using Player.Scripts;
 using UnityEngine;
 
 public class GameManager : ASingleton<GameManager>
 {
+    public AnimationController animationController;
         static State currentState;
         public enum State
         {
@@ -24,21 +26,23 @@ public class GameManager : ASingleton<GameManager>
             switch (currentState)
             {
                 case State.Idle:
+                    animationController.Idle();
                     break;
-
                 case State.Running:
+                    animationController.Run();
+                    
                     break;
-
                 case State.SuperRunning:
+                    
                     break;
-
                 case State.Slide:
+                    animationController.SlideRun();
                     break;
-
                 case State.GameOver:
+                    animationController.Dead();
                     break;
-
                 case State.Win:
+                    animationController.Dance();
                     break;
             }
         }
