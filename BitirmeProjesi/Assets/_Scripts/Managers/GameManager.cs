@@ -5,8 +5,13 @@ using UnityEngine;
 
 public class GameManager : ASingleton<GameManager>
 {
-    public AnimationController animationController;
+        [SerializeField] GameObject Player;
+
+        AnimationController _animationController;
+        PlayerController _playerController;
+   
         static State currentState;
+
         public enum State
         {
             Idle,
@@ -18,32 +23,40 @@ public class GameManager : ASingleton<GameManager>
         }
         void Awake()
         {
+            _animationController = Player.GetComponent<AnimationController>();
+            _playerController = Player.GetComponent<PlayerController>();
+        }
+        void Start()
+        {
             StartSingleton(this);
-            SetState("Idle");
+            SetState("Running");
         }
         void Update()
         {
-            switch (currentState)
+        switch (currentState)
             {
                 case State.Idle:
-                    animationController.Idle();
-                    break;
+                    _animationController.Idle();
+                    _playerController.IsStopMode = true;
+                break;
                 case State.Running:
-                    animationController.Run();
-                    
-                    break;
+                    _animationController.Run();
+                    _playerController.IsStopMode = false;
+                break;
                 case State.SuperRunning:
                     
-                    break;
+                break;
                 case State.Slide:
-                    animationController.SlideRun();
+                    _animationController.SlideRun();
                     break;
                 case State.GameOver:
-                    animationController.Dead();
-                    break;
+                    _animationController.Dead();
+                    _playerController.IsStopMode = true;
+                break;
                 case State.Win:
-                    animationController.Dance();
-                    break;
+                    _animationController.Dance();
+                    _playerController.IsStopMode = true;
+                break;
             }
         }
         //Duruma göre true/false gönderiyor

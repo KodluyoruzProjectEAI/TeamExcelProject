@@ -4,7 +4,7 @@ namespace Player.Scripts
 {
    public class AnimationController : MonoBehaviour
    {
-      public Animator animator;
+      Animator animator;
       private static readonly int RunningID = Animator.StringToHash("Running");
       private static readonly int IdleID = Animator.StringToHash("idle");
       private static readonly int InjuredRunID = Animator.StringToHash("Injured");
@@ -12,6 +12,10 @@ namespace Player.Scripts
       private static readonly int DanceID = Animator.StringToHash("Dance");
       private static readonly int SlideRunID = Animator.StringToHash("SlideRun");
 
+      void Awake()
+      {
+        animator = GetComponentInChildren<Animator>();
+      }
       public void Idle()
       {
          animator.SetTrigger(IdleID);

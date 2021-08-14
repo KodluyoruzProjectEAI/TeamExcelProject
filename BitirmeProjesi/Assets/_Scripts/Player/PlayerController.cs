@@ -10,7 +10,7 @@ public class PlayerController : PlayerData,IEntityController
     IVerticalMover _IverticalMover;
     IPlayerSkills _IplayerSkills;
     float inputHorValue;
-   
+
     void Awake()
     {   
         _playerController = GetComponent<PlayerController>();
@@ -25,7 +25,11 @@ public class PlayerController : PlayerData,IEntityController
     }
     void FixedUpdate()
     {
-        _IhorizontalMover.Active(inputHorValue,HorizontalSpeed);
+        if (IsStopMode)
+        {
+            return;
+        }
+        _IhorizontalMover.Active(inputHorValue, HorizontalSpeed);
         _IverticalMover.Active(VerticalSpeed);
     }
     void OnTriggerEnter(Collider collider)
