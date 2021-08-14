@@ -13,6 +13,6 @@ public class VerticalMover : IVerticalMover
     }
     public void Active(float speed)
     {
-        rb.AddForce(Vector3.forward * speed * Time.deltaTime * 10);
+        rb.velocity=(Vector3.forward * speed * Time.deltaTime * 10);
     }
 }

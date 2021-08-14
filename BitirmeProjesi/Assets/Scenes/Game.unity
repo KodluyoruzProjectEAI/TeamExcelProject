@@ -1016,9 +1016,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e42c752f75124b44bbafe4c154a9ecc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <HorizontalSpeed>k__BackingField: 5
-  <VerticalSpeed>k__BackingField: 50
-  <BoundX>k__BackingField: 1.9
+  <HorizontalSpeed>k__BackingField: 20
+  <VerticalSpeed>k__BackingField: 10
+  <BoundX>k__BackingField: 1.5
 --- !u!54 &1791310405
 Rigidbody:
   m_ObjectHideFlags: 0

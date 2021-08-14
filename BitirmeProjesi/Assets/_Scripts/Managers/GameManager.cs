@@ -48,7 +48,7 @@ public class GameManager : ASingleton<GameManager>
                 break;
                 case State.Slide:
                     _animationController.SlideRun();
-                    break;
+                break;
                 case State.GameOver:
                     _animationController.Dead();
                     _playerController.IsStopMode = true;
