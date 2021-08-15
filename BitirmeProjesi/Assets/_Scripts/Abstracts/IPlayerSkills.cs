@@ -5,4 +5,5 @@ using UnityEngine;
 public interface IPlayerSkills 
 {
     void AddSpeed(float value);
+    void RemoveSpeed(float value);
 }

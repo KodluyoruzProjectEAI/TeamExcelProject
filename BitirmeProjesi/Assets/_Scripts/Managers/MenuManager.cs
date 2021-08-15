@@ -9,6 +9,4 @@ public class MenuManager : ASingleton<MenuManager>
     {
         StartSingleton(this);
     }
-
-   
 }

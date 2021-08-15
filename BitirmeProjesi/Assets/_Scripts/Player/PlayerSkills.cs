@@ -13,4 +13,8 @@ public class PlayerSkills : IPlayerSkills
     {
        _entityController.VerticalSpeed += value;
     }
+    public void RemoveSpeed(float value)
+    {
+        _entityController.VerticalSpeed -= value;
+    }
 }

@@ -36,7 +36,10 @@ public class PlayerController : PlayerData,IEntityController
         switch (collider.tag)
         {
             case "SpeedUp":
-              _IplayerSkills.AddSpeed(10f);
+                _IplayerSkills.AddSpeed(10f);
+                break;
+            case "Obstacle":
+                _IplayerSkills.RemoveSpeed(10f);
                 break;
         }
     }
