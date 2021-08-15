@@ -43,7 +43,7 @@ public class HorizontalMover : MonoBehaviour, IHorizontalMover
                     }
                     delayTime = Time.time;
                     break;
-                //SA–A
+                //SA√êA
                 case 1:
                     switch (currentState)
                     {
