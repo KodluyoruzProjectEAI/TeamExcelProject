@@ -41,6 +41,9 @@ public class PlayerController : PlayerData,IEntityController
             case "Obstacle":
                 _IplayerSkills.RemoveSpeed(10f);
                 break;
+            case "FinishLine":
+                GameManager.SetState("Slide");
+                break;
         }
     }
 

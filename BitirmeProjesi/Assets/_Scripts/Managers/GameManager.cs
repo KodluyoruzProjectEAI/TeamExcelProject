@@ -48,14 +48,19 @@ public class GameManager : ASingleton<GameManager>
                 break;
                 case State.Slide:
                     _animationController.SlideRun();
+                    if (_animationController.animator.GetCurrentAnimatorStateInfo(0).normalizedTime > 1)
+                    {
+                        SetState("Win");
+                    }
                 break;
                 case State.GameOver:
-                    _animationController.Dead();
                     _playerController.IsStopMode = true;
+                    _animationController.Dead();
+                
                 break;
                 case State.Win:
-                    _animationController.Dance();
                     _playerController.IsStopMode = true;
+                    _animationController.Dance();
                 break;
             }
         }

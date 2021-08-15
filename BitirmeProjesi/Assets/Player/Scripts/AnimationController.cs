@@ -4,7 +4,7 @@ namespace Player.Scripts
 {
    public class AnimationController : MonoBehaviour
    {
-      Animator animator;
+      public Animator animator;
       private static readonly int RunningID = Animator.StringToHash("Running");
       private static readonly int IdleID = Animator.StringToHash("idle");
       private static readonly int InjuredRunID = Animator.StringToHash("Injured");
