@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="e54f803a-6ecf-4e3e-b461-75f1cd9ec03d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.BitirmeProjesi/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BitirmeProjesi/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Abstracts/AManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Abstracts/AManager.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -13,8 +14,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/_Scripts/Water.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/_Scripts/WaterBehaviour.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_Scripts/Player/PlayerParticle.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
@@ -28,6 +28,8 @@
       <option value="$PROJECT_DIR$/Assets/_Scripts/Managers/GameManager.cs" />
       <option value="$PROJECT_DIR$/Assets/_Scripts/Water.cs" />
       <option value="$PROJECT_DIR$/Assets/_Scripts/WaterBehaviour.cs" />
+      <option value="$PROJECT_DIR$/Assets/_Scripts/Player/PlayerParticle.cs" />
+      <option value="$PROJECT_DIR$/Assets/_Scripts/Abstracts/AManager.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1waq52m88hEldhxKuAx736gE18f" />

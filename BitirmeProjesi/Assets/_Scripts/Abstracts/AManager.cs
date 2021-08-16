@@ -9,6 +9,8 @@ public abstract class AManager : MonoBehaviour
     IAnimationController _animationController;
     Animator animator;
 
+    //private PlayerParticle _playerParticle;
+
     public State currentState;
     public enum State
     {
@@ -24,6 +26,8 @@ public abstract class AManager : MonoBehaviour
         animator = prefab.GetComponentInChildren<Animator>();
         _entityController = prefab.GetComponent<IEntityController>();
         _animationController = new AnimationController(animator);
+
+        //_playerParticle = FindObjectOfType<PlayerParticle>();
     }
  
     protected virtual void StateVoid()
@@ -43,6 +47,8 @@ public abstract class AManager : MonoBehaviour
                 break;
             case State.Slide:
                 _animationController.SlideRun();
+                //_playerParticle.PlaySplash();
+                PlaySplash();
                 if (_animationController._animator.GetCurrentAnimatorStateInfo(0).normalizedTime > 1)
                 {
                     SetState("Win");
@@ -87,5 +93,11 @@ public abstract class AManager : MonoBehaviour
                 currentState = State.Win;
                 break;
         }
+    }
+    [SerializeField] private ParticleSystem splash;
+
+    public void PlaySplash()
+    {
+        splash.Play();
     }
 }
