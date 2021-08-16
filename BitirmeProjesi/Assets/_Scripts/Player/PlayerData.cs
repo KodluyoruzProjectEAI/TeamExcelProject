@@ -5,9 +5,6 @@ using UnityEngine;
 public class PlayerData : MonoBehaviour
 {
     [field: SerializeField]
-    public float HorizontalSpeed { get; set; }
-
-    [field: SerializeField]
     public float VerticalSpeed { get; set; }
 
     [field: SerializeField]

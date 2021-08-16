@@ -1,44 +1,42 @@
 using UnityEngine;
 
-namespace Player.Scripts
-{
-   public class AnimationController : MonoBehaviour
+   public class AnimationController :IAnimationController
    {
-      public Animator animator;
-      private static readonly int RunningID = Animator.StringToHash("Running");
-      private static readonly int IdleID = Animator.StringToHash("idle");
-      private static readonly int InjuredRunID = Animator.StringToHash("Injured");
-      private static readonly int DeadID = Animator.StringToHash("Dead");
-      private static readonly int DanceID = Animator.StringToHash("Dance");
-      private static readonly int SlideRunID = Animator.StringToHash("SlideRun");
+      public Animator _animator{ get; set; }
+      int RunningID = Animator.StringToHash("Running");
+      int IdleID = Animator.StringToHash("idle");
+      int InjuredRunID = Animator.StringToHash("Injured");
+      int DeadID = Animator.StringToHash("Dead");
+      int DanceID = Animator.StringToHash("Dance");
+      int SlideRunID = Animator.StringToHash("SlideRun");
 
-      void Awake()
+      public AnimationController(Animator animator)
       {
-        animator = GetComponentInChildren<Animator>();
+         _animator = animator;
       }
       public void Idle()
       {
-         animator.SetTrigger(IdleID);
+         _animator.SetTrigger(IdleID);
       }
       public void Run()
       {
-         animator.SetTrigger(RunningID);
+         _animator.SetTrigger(RunningID);
       }
       public void InjuredRun()
       {
-         animator.SetTrigger(InjuredRunID);
+         _animator.SetTrigger(InjuredRunID);
       }
       public void Dead()
       {
-         animator.SetTrigger(DeadID);
+         _animator.SetTrigger(DeadID);
       }
       public void Dance()
       {
-         animator.SetTrigger(DanceID);
+         _animator.SetTrigger(DanceID);
       }
       public void SlideRun()
       {
-         animator.SetTrigger(SlideRunID);
+         _animator.SetTrigger(SlideRunID);
       }
    }
-}
+

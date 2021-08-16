@@ -2,26 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerController : PlayerData,IEntityController
+public class EnemyController:PlayerData,IEntityController
 {
-    PlayerManager _playerManager;
-    PlayerInput _playerInput;
+    EnemyManager _enemyManager;
     IHorizontalMover _IhorizontalMover;
     IVerticalMover _IverticalMover;
     IPlayerSkills _IplayerSkills;
-    float inputHorValue;
 
     void Awake()
-    {   
-        _playerInput = GetComponent<PlayerInput>();
+    {
         _IhorizontalMover = new HorizontalMover(this);
         _IverticalMover = new VerticalMover(this);
         _IplayerSkills = new PlayerSkills(this);
-        _playerManager = FindObjectOfType<PlayerManager>();
-    }
-    void Update()
-    {
-        inputHorValue = _playerInput.GetMoveInput();
+        _enemyManager = FindObjectOfType<EnemyManager>();
     }
     void FixedUpdate()
     {
@@ -29,7 +22,7 @@ public class PlayerController : PlayerData,IEntityController
         {
             return;
         }
-        StartCoroutine(_IhorizontalMover.Active(inputHorValue));
+        StartCoroutine(_IhorizontalMover.Active(1)); //Denemelik 1
         _IverticalMover.Active(VerticalSpeed);
     }
     void OnTriggerEnter(Collider collider)
@@ -43,9 +36,8 @@ public class PlayerController : PlayerData,IEntityController
                 _IplayerSkills.RemoveSpeed(10f);
                 break;
             case "FinishLine":
-                _playerManager.SetState("Slide");
+                _enemyManager.SetState("Slide");
                 break;
         }
     }
-
 }
