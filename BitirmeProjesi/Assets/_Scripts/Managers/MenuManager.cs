@@ -7,7 +7,7 @@ using UnityEngine.Events;
 
 public class MenuManager : ASingleton<MenuManager>
 {
-    public AManager aManager;
+    public PlayerManager playerManager;
     public GameObject canvas;
     void Awake()
     {
@@ -15,13 +15,13 @@ public class MenuManager : ASingleton<MenuManager>
     }
     private void Start()
     {
-        aManager = FindObjectOfType<AManager>();
+        playerManager = FindObjectOfType<PlayerManager>();
 
     }
     public void Play()
     {
         //Player Manager'dan start methodundaki statei IDLE'a aldým, tap to Play yaptýktan sonra runninge geçsin istedim, geçmiyor
-        aManager.currentState = AManager.State.Running;
+        playerManager.currentState = PlayerManager.State.Running;
         canvas.SetActive(false);
         Debug.Log("ÇALIÞ LÜTFN");
     }
