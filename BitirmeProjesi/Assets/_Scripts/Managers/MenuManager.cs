@@ -7,22 +7,15 @@ using UnityEngine.Events;
 
 public class MenuManager : ASingleton<MenuManager>
 {
-    public AManager aManager;
+    public static event System.Action OnStartGame;
     public GameObject canvas;
     void Awake()
     {
         StartSingleton(this);
     }
-    private void Start()
-    {
-        aManager = FindObjectOfType<AManager>();
-
-    }
     public void Play()
     {
-        //Player Manager'dan start methodundaki statei IDLE'a aldým, tap to Play yaptýktan sonra runninge geçsin istedim, geçmiyor
-        aManager.currentState = AManager.State.Running;
+        OnStartGame?.Invoke();
         canvas.SetActive(false);
-        Debug.Log("ÇALIÞ LÜTFN");
     }
 }
