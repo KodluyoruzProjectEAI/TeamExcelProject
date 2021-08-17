@@ -3,14 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Events;
-using UnityEngine.SceneManagement;
 
 
 public class MenuManager : ASingleton<MenuManager>
 {
     public AManager aManager;
     public GameObject canvas;
-    //public UnityEvent OnClick;
     void Awake()
     {
         StartSingleton(this);
@@ -20,9 +18,9 @@ public class MenuManager : ASingleton<MenuManager>
         aManager = FindObjectOfType<AManager>();
 
     }
-    public void deneme()
+    public void Play()
     {
-        //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        //Player Manager'dan start methodundaki statei IDLE'a aldým, tap to Play yaptýktan sonra runninge geçsin istedim, geçmiyor
         aManager.currentState = AManager.State.Running;
         canvas.SetActive(false);
         Debug.Log("ÇALIÞ LÜTFN");
