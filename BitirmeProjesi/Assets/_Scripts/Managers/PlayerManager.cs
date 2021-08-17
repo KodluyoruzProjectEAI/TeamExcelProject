@@ -11,7 +11,7 @@ public class PlayerManager : AManager
     IEntityController _entityController;
     IAnimationController _animationController;
     Animator animator;
-   
+    
     void Awake()
     {
         prefab = FindObjectOfType<PlayerController>().gameObject;
@@ -19,8 +19,13 @@ public class PlayerManager : AManager
         _entityController = prefab.GetComponent<IEntityController>();
         _animationController = new AnimationController(animator);
     }
+    void OnEnable()
+    {
+        MenuManager.OnStartGame += StartGame;
+    }
     void Start()
     {
+        Singleton();
         SetState("Idle");
     }
     void Update()
@@ -113,5 +118,21 @@ public class PlayerManager : AManager
                 currentState = State.Win;
                 break;
         }
+    }
+    void Singleton()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(this.gameObject);
+        }
+        else
+        {
+            Destroy(this.gameObject);
+        }
+    }
+    public override void StartGame()
+    {
+        SetState("Running");
     }
 }

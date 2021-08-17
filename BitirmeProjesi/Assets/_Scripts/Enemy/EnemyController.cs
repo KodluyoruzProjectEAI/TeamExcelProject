@@ -8,7 +8,7 @@ public class EnemyController:PlayerData,IEntityController
     IHorizontalMover _IhorizontalMover;
     IVerticalMover _IverticalMover;
     IPlayerSkills _IplayerSkills;
-   
+    
     void Awake()
     {
         _IhorizontalMover = new HorizontalMover(this);
@@ -21,7 +21,7 @@ public class EnemyController:PlayerData,IEntityController
         {
             return;
         }
-        StartCoroutine(_IhorizontalMover.Active(1)); //Denemelik 1
+        StartCoroutine(_IhorizontalMover.Active(0));
         _IverticalMover.Active(VerticalSpeed);
     }
     void OnTriggerEnter(Collider collider)

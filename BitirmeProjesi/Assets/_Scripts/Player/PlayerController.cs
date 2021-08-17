@@ -47,5 +47,4 @@ public class PlayerController : PlayerData,IEntityController
                 break;
         }
     }
-
 }

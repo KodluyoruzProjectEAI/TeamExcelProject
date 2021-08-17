@@ -16,9 +16,13 @@ public class EnemyManager : AManager
         _entityController = prefab.GetComponent<IEntityController>();
         _animationController = new AnimationController(animator);
     }
+    void OnEnable()
+    {
+        MenuManager.OnStartGame += StartGame;
+    }
     void Start()
     {
-        SetState("Running");
+        SetState("Idle");
     }
     void Update()
     {
@@ -112,8 +116,8 @@ public class EnemyManager : AManager
         }
     }
 
-    public void SetPrefab(GameObject go)
+    public override void StartGame()
     {
-        prefab = go;
+        SetState("Running");
     }
 }

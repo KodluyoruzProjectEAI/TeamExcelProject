@@ -19,6 +19,7 @@ public class HorizontalMover : MonoBehaviour, IHorizontalMover
         _entityController = entityController;
         leftPosX = -entityController.BoundX;
         rightPosX = entityController.BoundX;
+        currentPosX = _entityController.transform.position.x;
     }
     public IEnumerator Active(float inputHorValue)
     {

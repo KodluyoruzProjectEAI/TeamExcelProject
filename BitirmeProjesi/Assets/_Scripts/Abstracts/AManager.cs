@@ -14,6 +14,7 @@ public abstract class AManager : MonoBehaviour
         GameOver,
         Win
     }
+    public abstract void StartGame();
     public abstract void Idle();
     public abstract void Running();
     public abstract void SuperRunning();
