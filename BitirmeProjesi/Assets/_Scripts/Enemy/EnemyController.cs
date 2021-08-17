@@ -4,17 +4,16 @@ using UnityEngine;
 
 public class EnemyController:PlayerData,IEntityController
 {
-    EnemyManager _enemyManager;
+    [SerializeField] EnemyManager _enemyManager;
     IHorizontalMover _IhorizontalMover;
     IVerticalMover _IverticalMover;
     IPlayerSkills _IplayerSkills;
-
+   
     void Awake()
     {
         _IhorizontalMover = new HorizontalMover(this);
         _IverticalMover = new VerticalMover(this);
         _IplayerSkills = new PlayerSkills(this);
-        _enemyManager = FindObjectOfType<EnemyManager>();
     }
     void FixedUpdate()
     {

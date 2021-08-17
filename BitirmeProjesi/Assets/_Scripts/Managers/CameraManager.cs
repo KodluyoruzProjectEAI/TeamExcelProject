@@ -39,7 +39,6 @@ public class CameraManager : MonoBehaviour
         switch (_playerManager.currentState)
         {
             case PlayerManager.State.Idle:
-            
                 if (_camera.transform.parent != introCam)
                 {
                     _camera.transform.SetParent(introCam);
