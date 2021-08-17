@@ -12,6 +12,4 @@ public class PlayerData : MonoBehaviour
     public bool IsStopMode { get; set; }
     public Rigidbody rb => GetComponent<Rigidbody>();
 
-
-
 }

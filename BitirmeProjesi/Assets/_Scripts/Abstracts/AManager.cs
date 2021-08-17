@@ -3,14 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public abstract class AManager : MonoBehaviour
-{   
-    [SerializeField] GameObject prefab;
-    IEntityController _entityController;
-    IAnimationController _animationController;
-    Animator animator;
-
-    //private PlayerParticle _playerParticle;
-
+{
     public State currentState;
     public enum State
     {
@@ -21,83 +14,13 @@ public abstract class AManager : MonoBehaviour
         GameOver,
         Win
     }
-    void Awake()
-    {
-        animator = prefab.GetComponentInChildren<Animator>();
-        _entityController = prefab.GetComponent<IEntityController>();
-        _animationController = new AnimationController(animator);
+    public abstract void Idle();
+    public abstract void Running();
+    public abstract void SuperRunning();
+    public abstract void Slide();
+    public abstract void GameOver();
+    public abstract void Win();
+    public abstract void SetState(string set);
 
-        //_playerParticle = FindObjectOfType<PlayerParticle>();
-    }
- 
-    protected virtual void StateVoid()
-    {
-        switch (currentState)
-        {
-            case State.Idle:
-                _animationController.Idle();
-                _entityController.IsStopMode = true;
-                break;
-            case State.Running:
-                _animationController.Run();
-                _entityController.IsStopMode = false;
-                break;
-            case State.SuperRunning:
-
-                break;
-            case State.Slide:
-                _animationController.SlideRun();
-                //_playerParticle.PlaySplash();
-                PlaySplash();
-                if (_animationController._animator.GetCurrentAnimatorStateInfo(0).normalizedTime > 1)
-                {
-                    SetState("Win");
-                }
-                break;
-            case State.GameOver:
-                _entityController.IsStopMode = true;
-                _animationController.Dead();
-
-                break;
-            case State.Win:
-                _entityController.IsStopMode = true;
-                _animationController.Dance();
-                break;
-        }
-    }
-    public void SetState(string set)
-    {
-        switch (set)
-        {
-            case "Idle":
-                currentState = State.Idle;
-                break;
-
-            case "Running":
-                currentState = State.Running;
-                break;
-
-            case "SuperRunning":
-                currentState = State.SuperRunning;
-                break;
-
-            case "Slide":
-                currentState = State.Slide;
-                break;
-
-            case "GameOver":
-                currentState = State.GameOver;
-                break;
-
-            case "Win":
-                currentState = State.Win;
-                break;
-        }
-    }
-    [SerializeField] private ParticleSystem splash;
-
-    public void PlaySplash()
-    {
-        splash.Play();
-    }
+   
 }
