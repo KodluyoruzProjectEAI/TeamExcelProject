@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class AManager : MonoBehaviour
+public class AManager : MonoBehaviour
 {   
     [SerializeField] GameObject prefab;
     IEntityController _entityController;

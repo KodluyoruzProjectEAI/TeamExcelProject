@@ -6,7 +6,7 @@ public class PlayerManager : AManager
 {
     void Start()
     {
-        SetState("Running");
+        SetState("Idle");
     }
     void Update()
     {
