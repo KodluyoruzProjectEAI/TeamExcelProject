@@ -12,7 +12,7 @@ public class PlayerController : PlayerData,IEntityController
     float inputHorValue;
 
     void Awake()
-    {   
+    {
         _playerInput = GetComponent<PlayerInput>();
         _IhorizontalMover = new HorizontalMover(this);
         _IverticalMover = new VerticalMover(this);

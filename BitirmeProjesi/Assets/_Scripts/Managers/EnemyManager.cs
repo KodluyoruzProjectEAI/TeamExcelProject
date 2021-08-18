@@ -4,16 +4,14 @@ using UnityEngine;
 
 public class EnemyManager : AManager
 {
-    [SerializeField] GameObject prefab;
-    ParticleSystem splash;
+    [SerializeField] ParticleSystem splashParticle;
     IEntityController _entityController;
     IAnimationController _animationController;
     Animator animator;
     void Awake()
     {
-        splash = prefab.GetComponentInChildren<ParticleSystem>();
-        animator = prefab.GetComponentInChildren<Animator>();
-        _entityController = prefab.GetComponent<IEntityController>();
+        animator = GetComponentInChildren<Animator>();
+        _entityController = GetComponent<IEntityController>();
         _animationController = new AnimationController(animator);
     }
     void OnEnable()
@@ -68,7 +66,7 @@ public class EnemyManager : AManager
     public override void Slide()
     {
         _animationController.SlideRun();
-        splash.Play();
+        splashParticle.Play();
         if (_animationController._animator.GetCurrentAnimatorStateInfo(0).normalizedTime > 1)
         {
             SetState("Win");
