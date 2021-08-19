@@ -3,7 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="e54f803a-6ecf-4e3e-b461-75f1cd9ec03d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.BitirmeProjesi/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BitirmeProjesi/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Abstracts/AManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Abstracts/AManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/m_Water.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/m_Water.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/m_white.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/m_white.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Road/Materials/roadMat.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Road/Materials/roadMat.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Game.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Game.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/UI.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/UI.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,6 +87,8 @@
       <workItem from="1628945082228" duration="4859000" />
       <workItem from="1629124370035" duration="385000" />
       <workItem from="1629124778827" duration="2348000" />
+      <workItem from="1629219972083" duration="1790000" />
+      <workItem from="1629384557231" duration="1191000" />
     </task>
     <servers />
   </component>
