@@ -39,12 +39,20 @@ public class PlayerController : PlayerData,IEntityController
             case "SpeedUp":
                 _IplayerSkills.AddSpeed(10f);
                 break;
-            case "Obstacle":
+            /*case "Obstacle":
                 _IplayerSkills.RemoveSpeed(10f);
-                break;
+                break;*/
             case "FinishLine":
                 _playerManager.SetState("Slide");
                 break;
+        }
+    }
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.tag== "Obstacle")
+        {
+            _IplayerSkills.RemoveSpeed(10f);
+            
         }
     }
 }

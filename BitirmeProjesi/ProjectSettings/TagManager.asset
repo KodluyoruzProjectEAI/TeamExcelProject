@@ -6,6 +6,7 @@ TagManager:
   tags:
   - SpeedUp
   - FinishLine
+  - Obstacle
   layers:
   - Default
   - TransparentFX
