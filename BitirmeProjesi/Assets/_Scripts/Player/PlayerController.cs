@@ -46,6 +46,9 @@ public class PlayerController : PlayerData,IEntityController
             case "SpeedUp":
                 _IplayerSkills.AddSpeed(10f);
                 break;
+            case "Door":
+                //
+                break;
             /*case "Obstacle":
                 _IplayerSkills.RemoveSpeed(10f);
                 break;*/
@@ -54,12 +57,11 @@ public class PlayerController : PlayerData,IEntityController
                 break;
         }
     }
-    private void OnCollisionEnter(Collision collision)
+    void OnCollisionEnter(Collision collision)
     {
         if(collision.gameObject.tag== "Obstacle")
         {
             _IplayerSkills.RemoveSpeed(10f);
-            
         }
     }
    
