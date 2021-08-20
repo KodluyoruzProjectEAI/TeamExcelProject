@@ -10,6 +10,7 @@ public class PlayerController : PlayerData,IEntityController
     IVerticalMover _IverticalMover;
     IPlayerSkills _IplayerSkills;
     float inputHorValue;
+    public GameObject _canvas;
 
     void Awake()
     {
@@ -22,6 +23,12 @@ public class PlayerController : PlayerData,IEntityController
     void Update()
     {
         inputHorValue = _playerInput.GetMoveInput();
+        Debug.Log(VerticalSpeed);
+        if (VerticalSpeed <= 0f)
+        {
+            _canvas.SetActive(true);
+            Debug.Log("çalýþ");
+        }
     }
     void FixedUpdate()
     {
@@ -55,4 +62,5 @@ public class PlayerController : PlayerData,IEntityController
             
         }
     }
+   
 }

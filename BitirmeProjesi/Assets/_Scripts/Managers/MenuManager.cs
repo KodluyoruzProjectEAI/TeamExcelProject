@@ -24,7 +24,7 @@ public class MenuManager : ASingleton<MenuManager>
         OnStartGame?.Invoke();
         canvas.SetActive(false);
     }
-    private void Update()
+    /*private void Update()
     {   //çalýþmýyor,bakýcam,oldukça yanlýþ bir þey var
         Debug.Log(_playerController.VerticalSpeed);
         if ( _playerController.VerticalSpeed <= 0f)
@@ -33,5 +33,5 @@ public class MenuManager : ASingleton<MenuManager>
             canvas.SetActive(true);
             Debug.Log("çalýþ");
         }
-    }
+    }*/
 }
