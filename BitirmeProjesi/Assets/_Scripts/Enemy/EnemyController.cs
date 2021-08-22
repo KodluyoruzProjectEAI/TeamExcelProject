@@ -5,16 +5,33 @@ using UnityEngine;
 public class EnemyController:PlayerData,IEntityController
 {
     EnemyManager _enemyManager;
+    EnemyRandomMover _enemyRandomMover;
     IHorizontalMover _IhorizontalMover;
     IVerticalMover _IverticalMover;
     IPlayerSkills _IplayerSkills;
-    
+    int horizontalValue;
+    public State state;
+    public enum State
+    {
+        Left,
+        Right,
+        Center
+    }
     void Awake()
     {   
         _IhorizontalMover = new HorizontalMover(this);
         _IverticalMover = new VerticalMover(this);
         _IplayerSkills = new PlayerSkills(this);
         _enemyManager = GetComponent<EnemyManager>();
+        _enemyRandomMover = GetComponent<EnemyRandomMover>();
+    }
+    void Start()
+    {
+        _IhorizontalMover.SetStartEnum((int)(state));
+    }
+    void Update()
+    {
+        horizontalValue = _enemyRandomMover.RandomMove();
     }
     void FixedUpdate()
     {
@@ -22,7 +39,7 @@ public class EnemyController:PlayerData,IEntityController
         {
             return;
         }
-        StartCoroutine(_IhorizontalMover.Active(0));
+        StartCoroutine(_IhorizontalMover.Active(horizontalValue));
         _IverticalMover.Active(VerticalSpeed);
     }
     void OnTriggerEnter(Collider collider)
@@ -33,10 +50,26 @@ public class EnemyController:PlayerData,IEntityController
                 _IplayerSkills.AddSpeed(10f);
                 break;
             case "Obstacle":
-                _IplayerSkills.RemoveSpeed(10f);
+                _IplayerSkills.RemoveSpeed(5f);
                 break;
             case "FinishLine":
                 _enemyManager.SetState("Slide");
+                break;
+            case "Door":
+                DoorController dc = collider.GetComponent<DoorController>();
+                switch (dc.currentState)
+                {
+                    case DoorController.State.Blue:
+                        _IplayerSkills.AddSpeed(15f);
+                        break;
+
+                    case DoorController.State.Red:
+                        _IplayerSkills.RemoveSpeed(5f);
+                        break;
+
+                    case DoorController.State.Yellow:
+                        break;
+                }
                 break;
         }
     }

@@ -49,6 +49,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <VerticalSpeed>k__BackingField: 20
   <BoundX>k__BackingField: 1.5
+  _canvas: {fileID: 0}
 --- !u!114 &4810801981363897672
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -87,10 +88,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.17
-  m_Height: 1
+  m_Radius: 0.17000002
+  m_Height: 1.0406773
   m_Direction: 1
-  m_Center: {x: 0, y: 0.5, z: 0.6}
+  m_Center: {x: 0, y: 0.52033865, z: 0.6}
 --- !u!1 &4810801981629529623
 GameObject:
   m_ObjectHideFlags: 0

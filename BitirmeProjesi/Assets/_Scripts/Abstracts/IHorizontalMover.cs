@@ -5,4 +5,5 @@ using UnityEngine;
 public interface IHorizontalMover 
 {
     IEnumerator Active(float inputHorValue);
+    void SetStartEnum(int index);
 }

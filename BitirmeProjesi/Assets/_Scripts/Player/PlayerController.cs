@@ -23,11 +23,9 @@ public class PlayerController : PlayerData,IEntityController
     void Update()
     {
         inputHorValue = _playerInput.GetMoveInput();
-        Debug.Log(VerticalSpeed);
         if (VerticalSpeed <= 0f)
         {
             _canvas.SetActive(true);
-            Debug.Log("çalýþ");
         }
     }
     void FixedUpdate()
@@ -46,14 +44,30 @@ public class PlayerController : PlayerData,IEntityController
             case "SpeedUp":
                 _IplayerSkills.AddSpeed(10f);
                 break;
-            case "Door":
-                //
+            
+            case "Obstacle":
+                _IplayerSkills.RemoveSpeed(5f);
                 break;
-            /*case "Obstacle":
-                _IplayerSkills.RemoveSpeed(10f);
-                break;*/
+
             case "FinishLine":
                 _playerManager.SetState("Slide");
+                break;
+
+            case "Door":
+                DoorController dc = collider.GetComponent<DoorController>();
+                switch (dc.currentState)
+                {
+                    case DoorController.State.Blue:
+                        _IplayerSkills.AddSpeed(15f);
+                        break;
+
+                    case DoorController.State.Red:
+                        _IplayerSkills.RemoveSpeed(5f);
+                        break;
+
+                    case DoorController.State.Yellow:
+                        break;
+                }
                 break;
         }
     }
@@ -61,7 +75,7 @@ public class PlayerController : PlayerData,IEntityController
     {
         if(collision.gameObject.tag== "Obstacle")
         {
-            _IplayerSkills.RemoveSpeed(10f);
+          //  _IplayerSkills.RemoveSpeed(10f);
         }
     }
    

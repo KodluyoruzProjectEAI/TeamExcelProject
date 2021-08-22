@@ -5,9 +5,10 @@ using UnityEngine;
 public class DoorController : MonoBehaviour
 {
     [SerializeField] GameObject icoSphere;
+    [SerializeField] float delayTime;
     Renderer rendererIco,rendererThis;
     
-    State currentState;
+    public State currentState;
     public enum State
     {
         Red,
@@ -18,6 +19,10 @@ public class DoorController : MonoBehaviour
     {
         rendererThis = GetComponent<Renderer>();
         rendererIco = icoSphere.GetComponent<Renderer>();
+    }
+    void Start()
+    {
+        RandomStart();
     }
     void Update()
     {
@@ -42,7 +47,7 @@ public class DoorController : MonoBehaviour
     }
     IEnumerator wait(State state)
     {
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(delayTime);
         switch (state)
         {
             case State.Red:
@@ -52,6 +57,22 @@ public class DoorController : MonoBehaviour
                 currentState = State.Blue;
                 break;
             case State.Blue:
+                currentState = State.Red;
+                break;
+        }
+    }
+    void RandomStart()
+    {
+        int r = Random.Range(0, 3);
+        switch(r)
+        {
+            case 0:
+                currentState = State.Yellow;
+                break;
+            case 1:
+                currentState = State.Blue;
+                break;
+            case 2:
                 currentState = State.Red;
                 break;
         }

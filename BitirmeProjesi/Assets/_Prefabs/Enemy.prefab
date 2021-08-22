@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2431568734343504674}
   - component: {fileID: 2431568734343504675}
   - component: {fileID: -3010218480214361005}
+  - component: {fileID: 6383003509882056707}
   - component: {fileID: 2431568734343504673}
   - component: {fileID: 2431568734343504672}
   m_Layer: 0
@@ -47,8 +48,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b8d2a2cd4177c041a5e36072f6dafa9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <VerticalSpeed>k__BackingField: 20
+  <VerticalSpeed>k__BackingField: 30
   <BoundX>k__BackingField: 1.5
+  state: 0
 --- !u!114 &-3010218480214361005
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -63,6 +65,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentState: 0
   splashParticle: {fileID: 2431568735938999427}
+--- !u!114 &6383003509882056707
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2431568734343504679}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34bc7ca58090c1e4dbfd4a5e683b66ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  repeatMoveTime: 0.1
 --- !u!54 &2431568734343504673
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4964,7 +4979,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 09ea959075c48714fb1300bff60e607a, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.58
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 09ea959075c48714fb1300bff60e607a, type: 3}
       propertyPath: m_LocalRotation.w
@@ -5238,6 +5253,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -8.904117
       objectReference: {fileID: 0}
+    - target: {fileID: 4628515374410905883, guid: 09ea959075c48714fb1300bff60e607a, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: bcb26629150cdcc40a4e5e272fb86129, type: 2}
     - target: {fileID: 5097370190579632962, guid: 09ea959075c48714fb1300bff60e607a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: -1.7153267

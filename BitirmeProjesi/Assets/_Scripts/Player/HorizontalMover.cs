@@ -21,6 +21,21 @@ public class HorizontalMover : MonoBehaviour, IHorizontalMover
         rightPosX = entityController.BoundX;
         currentPosX = _entityController.transform.position.x;
     }
+    public void SetStartEnum(int index)
+    {
+        switch (index)
+        {
+            case 0:
+                currentState = CurrentState.Left;
+                break;
+            case 1:
+                currentState = CurrentState.Right;
+                break;
+            case 2:
+                currentState = CurrentState.Center;
+                break;
+        }
+    }
     public IEnumerator Active(float inputHorValue)
     {
         float y = _entityController.transform.position.y;
@@ -64,7 +79,6 @@ public class HorizontalMover : MonoBehaviour, IHorizontalMover
         }
         _entityController.transform.position = Vector3.Lerp(_entityController.transform.position, new Vector3(currentPosX, y, z), Time.deltaTime * 10);
         yield return null;
-
     }
 }
 
