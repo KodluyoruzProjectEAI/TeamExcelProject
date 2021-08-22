@@ -10,7 +10,6 @@ public class PlayerController : PlayerData,IEntityController
     IVerticalMover _IverticalMover;
     IPlayerSkills _IplayerSkills;
     float inputHorValue;
-    public GameObject _canvas;
 
     void Awake()
     {
@@ -23,10 +22,6 @@ public class PlayerController : PlayerData,IEntityController
     void Update()
     {
         inputHorValue = _playerInput.GetMoveInput();
-        if (VerticalSpeed <= 0f)
-        {
-            _canvas.SetActive(true);
-        }
     }
     void FixedUpdate()
     {
@@ -71,12 +66,4 @@ public class PlayerController : PlayerData,IEntityController
                 break;
         }
     }
-    void OnCollisionEnter(Collision collision)
-    {
-        if(collision.gameObject.tag== "Obstacle")
-        {
-          //  _IplayerSkills.RemoveSpeed(10f);
-        }
-    }
-   
 }

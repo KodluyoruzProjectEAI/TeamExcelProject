@@ -8,30 +8,31 @@ using UnityEngine.Events;
 public class MenuManager : ASingleton<MenuManager>
 {
     public static event System.Action OnStartGame;
-    public GameObject canvas;
-    PlayerController _playerController;
-    //IEntityController entityController;
-    //PlayerData playerData;
-    //bunlar menumanager scriptinde vertical speed ve boundx diye alan açýyor
-    
+    public static event System.Action OnFinishGame;
+    [SerializeField] GameObject TapToPlayCanvas;
+    [SerializeField] GameObject RestartGameCanvas;
+    PlayerManager _playerManager;
     void Awake()
     {
         StartSingleton(this);
-        _playerController = FindObjectOfType<PlayerController>();
+        _playerManager = FindObjectOfType<PlayerManager>();
+    }
+    void Update()
+    {
+        if (_playerManager.currentState == PlayerManager.State.Win || _playerManager.currentState == PlayerManager.State.GameOver)
+        {
+            RestartGameCanvas.SetActive(true);
+        }
     }
     public void Play()
     {
         OnStartGame?.Invoke();
-        canvas.SetActive(false);
+        TapToPlayCanvas.SetActive(false);
     }
-    /*private void Update()
-    {   //çalýþmýyor,bakýcam,oldukça yanlýþ bir þey var
-        Debug.Log(_playerController.VerticalSpeed);
-        if ( _playerController.VerticalSpeed <= 0f)
-        {
-           
-            canvas.SetActive(true);
-            Debug.Log("çalýþ");
-        }
-    }*/
+    public void RestartGame()
+    {
+        RestartGameCanvas.SetActive(false);
+        //Restart game...
+    }
+
 }
