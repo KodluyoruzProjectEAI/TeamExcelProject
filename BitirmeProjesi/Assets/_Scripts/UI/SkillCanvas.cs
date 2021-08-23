@@ -51,6 +51,6 @@ public class SkillCanvas : MonoBehaviour
 
         Vector3 pos = new Vector3(x, y, z);
         Instantiate(obj, pos, transform.rotation);
-
+        _playerController.IsPower = false;
     }
 }

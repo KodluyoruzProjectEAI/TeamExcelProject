@@ -8,6 +8,7 @@ TagManager:
   - FinishLine
   - Obstacle
   - Door
+  - Collectable
   layers:
   - Default
   - TransparentFX

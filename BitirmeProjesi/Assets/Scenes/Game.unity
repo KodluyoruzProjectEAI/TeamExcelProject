@@ -907,7 +907,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 735509760539350359, guid: 745842880d7323042b7d35980b1b146f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.5799279
+      value: 1.9
       objectReference: {fileID: 0}
     - target: {fileID: 735509760539350359, guid: 745842880d7323042b7d35980b1b146f, type: 3}
       propertyPath: m_LocalPosition.y
@@ -915,7 +915,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 735509760539350359, guid: 745842880d7323042b7d35980b1b146f, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 38.28
+      value: 29.78
       objectReference: {fileID: 0}
     - target: {fileID: 735509760539350359, guid: 745842880d7323042b7d35980b1b146f, type: 3}
       propertyPath: m_LocalRotation.w
@@ -948,6 +948,10 @@ PrefabInstance:
     - target: {fileID: 735509760539350365, guid: 745842880d7323042b7d35980b1b146f, type: 3}
       propertyPath: m_Name
       value: PyramidTri
+      objectReference: {fileID: 0}
+    - target: {fileID: 735509760539350365, guid: 745842880d7323042b7d35980b1b146f, type: 3}
+      propertyPath: m_TagString
+      value: Collectable
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 745842880d7323042b7d35980b1b146f, type: 3}
@@ -3131,7 +3135,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 735509760539350359, guid: 745842880d7323042b7d35980b1b146f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.0635734
+      value: -1.15
       objectReference: {fileID: 0}
     - target: {fileID: 735509760539350359, guid: 745842880d7323042b7d35980b1b146f, type: 3}
       propertyPath: m_LocalPosition.y
@@ -4227,6 +4231,10 @@ PrefabInstance:
     - target: {fileID: 4810801981363897679, guid: 8b7ee90a6d7b421448f38dca10ea42ce, type: 3}
       propertyPath: _canvas
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810801981363897679, guid: 8b7ee90a6d7b421448f38dca10ea42ce, type: 3}
+      propertyPath: <IsPower>k__BackingField
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4810801981915869066, guid: 8b7ee90a6d7b421448f38dca10ea42ce, type: 3}
       propertyPath: m_Materials.Array.data[0]

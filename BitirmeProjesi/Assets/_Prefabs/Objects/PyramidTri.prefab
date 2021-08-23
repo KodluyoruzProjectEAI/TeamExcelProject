@@ -11,12 +11,12 @@ GameObject:
   - component: {fileID: 735509760539350359}
   - component: {fileID: 735509760539350358}
   - component: {fileID: 735509760539350353}
-  - component: {fileID: 735509760539350352}
   - component: {fileID: 735509760539350355}
   - component: {fileID: 735509760539350354}
+  - component: {fileID: 1588142327044408389}
   m_Layer: 0
   m_Name: PyramidTri
-  m_TagString: Obstacle
+  m_TagString: Collectable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -34,7 +34,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 83.74838, y: 83.74838, z: 263.74838}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
 --- !u!33 &735509760539350358
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -84,20 +84,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &735509760539350352
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 735509760539350365}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4300000, guid: cf08330276d4b4dd5ad53a826cd7a9cd, type: 2}
 --- !u!114 &735509760539350355
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -126,3 +112,16 @@ Animation:
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
   m_CullingType: 0
+--- !u!65 &1588142327044408389
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 735509760539350365}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.8660254, y: 1.0000001, z: 0.75}
+  m_Center: {x: 0.000000059604645, y: -0.00018645823, z: 0.124999955}
