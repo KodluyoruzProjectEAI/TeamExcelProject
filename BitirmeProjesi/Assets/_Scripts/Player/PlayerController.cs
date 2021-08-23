@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerController : PlayerData,IEntityController
+public class PlayerController : PlayerData, IEntityController
 {
     PlayerManager _playerManager;
     PlayerInput _playerInput;
@@ -11,6 +11,13 @@ public class PlayerController : PlayerData,IEntityController
     IPlayerSkills _IplayerSkills;
     float inputHorValue;
 
+    public CurrentState currentState;
+    public enum CurrentState
+    {
+        Center,
+        Left,
+        Right
+    }
     void Awake()
     {
         _playerInput = GetComponent<PlayerInput>();
@@ -21,6 +28,7 @@ public class PlayerController : PlayerData,IEntityController
     }
     void Update()
     {
+        currentState = (CurrentState)_IhorizontalMover.GetState();
         inputHorValue = _playerInput.GetMoveInput();
     }
     void FixedUpdate()
@@ -49,18 +57,18 @@ public class PlayerController : PlayerData,IEntityController
                 break;
 
             case "Door":
-                DoorController dc = collider.GetComponent<DoorController>();
-                switch (dc.currentState)
+                MagicDoor md = collider.GetComponent<MagicDoor>();
+                switch (md.currentState)
                 {
-                    case DoorController.State.Blue:
+                    case MagicDoor.State.Blue:
                         _IplayerSkills.AddSpeed(15f);
                         break;
 
-                    case DoorController.State.Red:
+                    case MagicDoor.State.Red:
                         _IplayerSkills.RemoveSpeed(5f);
                         break;
 
-                    case DoorController.State.Yellow:
+                    case MagicDoor.State.Yellow:
                         break;
                 }
                 break;

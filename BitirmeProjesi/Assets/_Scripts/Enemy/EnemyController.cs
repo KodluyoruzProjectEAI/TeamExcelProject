@@ -10,6 +10,7 @@ public class EnemyController:PlayerData,IEntityController
     IVerticalMover _IverticalMover;
     IPlayerSkills _IplayerSkills;
     int horizontalValue;
+
     public State state;
     public enum State
     {
@@ -56,18 +57,18 @@ public class EnemyController:PlayerData,IEntityController
                 _enemyManager.SetState("Slide");
                 break;
             case "Door":
-                DoorController dc = collider.GetComponent<DoorController>();
-                switch (dc.currentState)
+                MagicDoor md = collider.GetComponent<MagicDoor>();
+                switch (md.currentState)
                 {
-                    case DoorController.State.Blue:
+                    case MagicDoor.State.Blue:
                         _IplayerSkills.AddSpeed(15f);
                         break;
 
-                    case DoorController.State.Red:
+                    case MagicDoor.State.Red:
                         _IplayerSkills.RemoveSpeed(5f);
                         break;
 
-                    case DoorController.State.Yellow:
+                    case MagicDoor.State.Yellow:
                         break;
                 }
                 break;

@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 821566657}
   - component: {fileID: 1243029126063465185}
   m_Layer: 0
-  m_Name: Door
+  m_Name: MagicDoor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

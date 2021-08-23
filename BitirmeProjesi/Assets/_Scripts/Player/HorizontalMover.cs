@@ -5,8 +5,8 @@ using UnityEngine;
 public class HorizontalMover : MonoBehaviour, IHorizontalMover
 {
     IEntityController _entityController;
-    CurrentState currentState;
-    enum CurrentState
+    public CurrentState currentState;
+    public enum CurrentState
     {
         Center,
         Left,
@@ -35,6 +35,10 @@ public class HorizontalMover : MonoBehaviour, IHorizontalMover
                 currentState = CurrentState.Center;
                 break;
         }
+    }
+    public CurrentState GetState()
+    {
+        return currentState;
     }
     public IEnumerator Active(float inputHorValue)
     {
