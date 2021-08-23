@@ -47,7 +47,7 @@ public class SkillCanvas : MonoBehaviour
     void Spawn(float x) {
 
         float y = 0.51f;
-        float z = _playerController.transform.position.z + 5;
+        float z = _playerController.transform.position.z + 7;
 
         Vector3 pos = new Vector3(x, y, z);
         Instantiate(obj, pos, transform.rotation);
