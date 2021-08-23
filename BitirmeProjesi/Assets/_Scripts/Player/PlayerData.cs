@@ -10,6 +10,8 @@ public class PlayerData : MonoBehaviour
     [field: SerializeField]
     public float BoundX { get; set; }
     public bool IsStopMode { get; set; }
+    [field: SerializeField]
+    public bool IsPower { get; set; }
     public Rigidbody rb => GetComponent<Rigidbody>();
-
+   
 }

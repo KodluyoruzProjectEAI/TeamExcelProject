@@ -44,6 +44,10 @@ public class PlayerController : PlayerData, IEntityController
     {
         switch (collider.tag)
         {
+            case "Collectable":
+                IsPower = true;
+                break;
+
             case "SpeedUp":
                 _IplayerSkills.AddSpeed(10f);
                 break;

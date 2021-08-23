@@ -11,7 +11,7 @@ public class MenuManager : ASingleton<MenuManager>
     public static event System.Action OnFinishGame;
     [SerializeField] GameObject TapToPlayCanvas;
     [SerializeField] GameObject RestartGameCanvas;
-    [SerializeField] GameObject Skills;
+    [SerializeField] GameObject SkillCanvas;
     PlayerManager _playerManager;
     PlayerController _playerController;
     void Awake()
@@ -26,15 +26,15 @@ public class MenuManager : ASingleton<MenuManager>
         {
             RestartGameCanvas.SetActive(true);
         }
-        switch (_playerController.currentState)
+        if (_playerController.IsPower)
         {
-            case PlayerController.CurrentState.Center:
-                break;
-            case PlayerController.CurrentState.Left:
-                break;
-            case PlayerController.CurrentState.Right:
-                break;
+            SkillCanvas.SetActive(true);
         }
+        else
+        {
+            SkillCanvas.SetActive(false);
+        }
+       
     }
     public void Play()
     {
