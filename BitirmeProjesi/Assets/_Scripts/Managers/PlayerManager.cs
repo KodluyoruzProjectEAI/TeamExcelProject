@@ -28,7 +28,7 @@ public class PlayerManager : AManager
         Singleton();
         SetState("Idle");
     }
-    void Update()
+    void LateUpdate()
     {
         switch (currentState)
         {
