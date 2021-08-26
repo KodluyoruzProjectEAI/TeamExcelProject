@@ -56,22 +56,6 @@ public class EnemyController:PlayerData,IEntityController
             case "FinishLine":
                 _enemyManager.SetState("Slide");
                 break;
-            case "Door":
-                MagicDoor md = collider.GetComponent<MagicDoor>();
-                switch (md.currentState)
-                {
-                    case MagicDoor.State.Blue:
-                        _IplayerSkills.AddSpeed(15f);
-                        break;
-
-                    case MagicDoor.State.Red:
-                        _IplayerSkills.RemoveSpeed(5f);
-                        break;
-
-                    case MagicDoor.State.Yellow:
-                        break;
-                }
-                break;
         }
     }
 }
