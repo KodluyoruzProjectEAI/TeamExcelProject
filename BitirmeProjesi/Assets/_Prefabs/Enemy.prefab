@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: -3010218480214361005}
   - component: {fileID: 6383003509882056707}
   - component: {fileID: 2431568734343504673}
-  - component: {fileID: 2431568734343504672}
+  - component: {fileID: 2164086929636115095}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -63,7 +63,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8fdece592ddf0f84680d8f87449e7bc3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentState: 0
   splashParticle: {fileID: 2431568735938999427}
 --- !u!114 &6383003509882056707
 MonoBehaviour:
@@ -94,8 +93,8 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
---- !u!136 &2431568734343504672
-CapsuleCollider:
+--- !u!65 &2164086929636115095
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -104,10 +103,9 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.17
-  m_Height: 1
-  m_Direction: 1
-  m_Center: {x: 0, y: 0.5, z: 0.6}
+  serializedVersion: 2
+  m_Size: {x: 0.5020344, y: 0.9854715, z: 0.44377965}
+  m_Center: {x: 0.040587544, y: 0.5261724, z: 0.040542036}
 --- !u!1 &2431568735238889093
 GameObject:
   m_ObjectHideFlags: 0

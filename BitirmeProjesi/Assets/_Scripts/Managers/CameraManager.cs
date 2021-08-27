@@ -52,7 +52,7 @@ public class CameraManager : MonoBehaviour
                 }
                 CamLerp();
                 break;
-            case PlayerManager.State.SuperRunning:
+            case PlayerManager.State.InjuredRunning:
                 if (_camera.transform.parent != superFollewerCam)
                 {
                     _camera.transform.SetParent(superFollewerCam);

@@ -29,8 +29,8 @@ public class EnemyManager : AManager,IEntityManager
             case State.Running:
                 _process.Running();
                 break;
-            case State.SuperRunning:
-                _process.SuperRunning();
+            case State.InjuredRunning:
+                _process.InjuredRunning();
                 break;
             case State.Slide:
                 _process.Slide();

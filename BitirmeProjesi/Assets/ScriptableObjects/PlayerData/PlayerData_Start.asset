@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: PlayerData_Start
   m_EditorClassIdentifier: 
   <VerticalSpeed>k__BackingField: 20
-  <Position>k__BackingField: {x: 0, y: 0, z: 2.2592}
+  <Position>k__BackingField: {x: 0, y: 0, z: 0.9}

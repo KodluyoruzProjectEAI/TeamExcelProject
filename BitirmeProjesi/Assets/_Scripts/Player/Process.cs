@@ -26,9 +26,9 @@ public class Process :MonoBehaviour,IProcess
         _animationController.Run();
         _entityController.IsStopMode = false;
     }
-    public void SuperRunning()
+    public void InjuredRunning()
     {
-        //
+        _animationController.InjuredRun();
     }
     public void Slide()
     {

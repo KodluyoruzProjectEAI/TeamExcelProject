@@ -30,18 +30,20 @@ using UnityEngine;
       }
       public void Dead()
       {
-         _animator.ResetTrigger(RunningID);
-         _animator.SetTrigger(DeadID);
+        _animator.ResetTrigger(InjuredRunID);
+        _animator.ResetTrigger(RunningID);
+        _animator.SetTrigger(DeadID);
       }
       public void Dance()
       {
-         _animator.ResetTrigger(IdleID);
-         _animator.ResetTrigger(RunningID);
-         _animator.SetTrigger(DanceID);
+        _animator.ResetTrigger(InjuredRunID);
+        _animator.ResetTrigger(IdleID);
+        _animator.ResetTrigger(RunningID);
+        _animator.SetTrigger(DanceID);
       }
       public void SlideRun()
       {
-         _animator.SetTrigger(SlideRunID);
+        _animator.SetTrigger(SlideRunID);
       }
 }
 

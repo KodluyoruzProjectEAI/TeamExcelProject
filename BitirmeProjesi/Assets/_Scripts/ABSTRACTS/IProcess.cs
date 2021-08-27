@@ -6,7 +6,7 @@ public interface IProcess
 {
     void Idle();
     void Running();
-    void SuperRunning();
+    void InjuredRunning();
     void Slide();
     void GameOver();
     void Win();

@@ -15,6 +15,7 @@ public class MenuManager : ASingleton<MenuManager>
     PlayerManager _playerManager;
     PlayerController _playerController;
     GameManager _gameManager;
+    bool activatedMenu;
     void Awake()
     {
         StartSingleton(this);
@@ -24,14 +25,20 @@ public class MenuManager : ASingleton<MenuManager>
     }
     void Update()
     {
-        if (_playerManager.currentState == PlayerManager.State.Win)
+        if (activatedMenu) { return; }
+        switch (_playerManager.currentState)
         {
-            WinGameCanvas.SetActive(true);
+            case PlayerManager.State.Win:
+                StartCoroutine(ActivatedWinGameCanvas());
+                activatedMenu = true;
+                break;
+
+            case PlayerManager.State.GameOver:
+                StartCoroutine(ActivatedGameOverCanvas());
+                activatedMenu = true;
+                break;
         }
-        if(_playerManager.currentState == PlayerManager.State.GameOver)
-        {
-            LoseGameCanvas.SetActive(true);
-        }
+        
         if (_playerController.IsPower)
         {
             SkillCanvas.SetActive(true);
@@ -41,6 +48,16 @@ public class MenuManager : ASingleton<MenuManager>
             SkillCanvas.SetActive(false);
         }
     }
+    IEnumerator ActivatedWinGameCanvas() 
+    {
+        yield return new WaitForSeconds(2f);
+        WinGameCanvas.SetActive(true);
+    }
+    IEnumerator ActivatedGameOverCanvas()
+    {
+        yield return new WaitForSeconds(2f);
+        LoseGameCanvas.SetActive(true);
+    }
     public void Play()
     {
         OnStartGame?.Invoke();
@@ -48,10 +65,12 @@ public class MenuManager : ASingleton<MenuManager>
     public void RestartLevel()
     {
         _gameManager.CreateLevel(false);
+        activatedMenu = false;
     }
     public void NextLevel()
     {
         _gameManager.CreateLevel(true);
+        activatedMenu = false;
     }
 
 }

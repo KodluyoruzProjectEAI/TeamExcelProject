@@ -6,7 +6,7 @@ public interface IEntityManager
 {
     void SetIdleMOD();
     void SetRunningMOD();
-    void SetSuperRunningMOD();
+    void SetInjuredRunningMOD();
     void SetSlideMOD();
     void SetGameOverMOD();
     void SetWinMOD();

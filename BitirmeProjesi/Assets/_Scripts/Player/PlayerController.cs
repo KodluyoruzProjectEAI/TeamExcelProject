@@ -44,6 +44,10 @@ public class PlayerController : PlayerData, IEntityController
         StartCoroutine(_IhorizontalMover.Active(inputHorValue));
         _IverticalMover.Active(VerticalSpeed);
     }
+    void OnCollisionEnter(Collision collision)
+    {
+        _IcollisionController.Control(collision.collider);
+    }
     void OnTriggerEnter(Collider collider)
     {
         _IcollisionController.Control(collider);

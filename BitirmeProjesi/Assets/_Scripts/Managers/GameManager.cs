@@ -17,6 +17,7 @@ public class GameManager : ASingleton<GameManager>
     void Start()
     {
         Level = 0;
+        ResetPlayer();
     }
     public void CreateLevel(bool IsNextLevel)
     {

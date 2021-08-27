@@ -30,7 +30,6 @@ public class CollisionController: ICollisionController
         switch (collider.tag)
         {
             case "Collectable":
-
                 if (_IentityController.transform.GetComponent<PlayerController>())
                 {
                     _IentityController.IsPower = true;

@@ -9,7 +9,7 @@ public abstract class AManager : MonoBehaviour
     {
         Idle,
         Running,
-        SuperRunning,
+        InjuredRunning,
         Slide,
         GameOver,
         Win
@@ -22,9 +22,9 @@ public abstract class AManager : MonoBehaviour
     {
         currentState = State.Running;
     }
-    public void SetSuperRunningMOD()
+    public void SetInjuredRunningMOD()
     {
-        currentState = State.SuperRunning;
+        currentState = State.InjuredRunning;
     }
     public void SetSlideMOD()
     {
