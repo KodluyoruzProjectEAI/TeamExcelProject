@@ -9,7 +9,7 @@ public class SkillCanvas : MonoBehaviour
     PlayerController _playerController;
     void Awake()
     {
-        _playerController = FindObjectOfType<PlayerController>();    
+        _playerController = FindObjectOfType<PlayerController>();
     }
     void Update()
     {
@@ -46,11 +46,12 @@ public class SkillCanvas : MonoBehaviour
     }
     void Spawn(float x) {
 
+        Transform parent = FindObjectOfType<LevelController>().transform;
         float y = 0.51f;
         float z = _playerController.transform.position.z + 7;
 
         Vector3 pos = new Vector3(x, y, z);
-        Instantiate(obj, pos, transform.rotation);
+        Instantiate(obj, pos, transform.rotation,parent);
         _playerController.IsPower = false;
     }
 }

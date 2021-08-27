@@ -16,6 +16,7 @@ using UnityEngine;
       }
       public void Idle()
       {
+        _animator.ResetTrigger(DeadID);
          _animator.ResetTrigger(DanceID);
          _animator.SetTrigger(IdleID);
       }
@@ -30,6 +31,7 @@ using UnityEngine;
       }
       public void Dead()
       {
+         _animator.ResetTrigger(RunningID);
          _animator.SetTrigger(DeadID);
       }
       public void Dance()

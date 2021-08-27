@@ -6937,7 +6937,6 @@ MonoBehaviour:
   LevelList:
   - {fileID: 8299779384792664115, guid: 20371852b0d8f174a9904ea65b9ad18d, type: 3}
   - {fileID: 1324785689961498479, guid: 6e54c61e2b160e44eaf6c57be14152af, type: 3}
-  ActiveLevel: {fileID: 0}
 --- !u!4 &1997927139
 Transform:
   m_ObjectHideFlags: 0
