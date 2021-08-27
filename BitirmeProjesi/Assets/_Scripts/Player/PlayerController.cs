@@ -30,6 +30,10 @@ public class PlayerController : PlayerData, IEntityController
     {
         currentState = (CurrentState)_IhorizontalMover.GetState();
         inputHorValue = _playerInput.GetMoveInput();
+        if (VerticalSpeed <= 0)
+        {
+            PlayerManager.Instance.SetGameOverMOD();
+        }
     }
     void FixedUpdate()
     {
@@ -42,7 +46,6 @@ public class PlayerController : PlayerData, IEntityController
     }
     void OnTriggerEnter(Collider collider)
     {
-        Debug.Log("Girdi");
         _IcollisionController.Control(collider);
     }
 }

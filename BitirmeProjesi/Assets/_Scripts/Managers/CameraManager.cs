@@ -23,7 +23,7 @@ public class CameraManager : MonoBehaviour
         _camera = Camera.main;
         _playerManager = FindObjectOfType<PlayerManager>();
     }
-    void Update()
+    void LateUpdate()
     {
         CamFollow();
     }

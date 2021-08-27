@@ -8,23 +8,29 @@ using UnityEngine.Events;
 public class MenuManager : ASingleton<MenuManager>
 {
     public static event System.Action OnStartGame;
-    public static event System.Action OnFinishGame;
-    [SerializeField] GameObject TapToPlayCanvas;
-    [SerializeField] GameObject RestartGameCanvas;
+    public static event System.Action OnRestartGame;
+    [SerializeField] GameObject WinGameCanvas;
+    [SerializeField] GameObject LoseGameCanvas;
     [SerializeField] GameObject SkillCanvas;
     PlayerManager _playerManager;
     PlayerController _playerController;
+    GameManager _gameManager;
     void Awake()
     {
         StartSingleton(this);
+        _gameManager = FindObjectOfType<GameManager>();
         _playerManager = FindObjectOfType<PlayerManager>();
         _playerController = FindObjectOfType<PlayerController>();
     }
     void Update()
     {
-        if (_playerManager.currentState == PlayerManager.State.Win || _playerManager.currentState == PlayerManager.State.GameOver)
+        if (_playerManager.currentState == PlayerManager.State.Win)
         {
-            RestartGameCanvas.SetActive(true);
+            WinGameCanvas.SetActive(true);
+        }
+        if(_playerManager.currentState == PlayerManager.State.GameOver)
+        {
+            LoseGameCanvas.SetActive(true);
         }
         if (_playerController.IsPower)
         {
@@ -34,17 +40,18 @@ public class MenuManager : ASingleton<MenuManager>
         {
             SkillCanvas.SetActive(false);
         }
-       
     }
     public void Play()
     {
         OnStartGame?.Invoke();
-        TapToPlayCanvas.SetActive(false);
     }
-    public void RestartGame()
+    public void RestartLevel()
     {
-        RestartGameCanvas.SetActive(false);
-        //Restart game...
+        _gameManager.CreateLevel(false);
+    }
+    public void NextLevel()
+    {
+        _gameManager.CreateLevel(true);
     }
 
 }

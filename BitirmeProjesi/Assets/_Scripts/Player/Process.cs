@@ -26,21 +26,18 @@ public class Process :MonoBehaviour,IProcess
         _animationController.Run();
         _entityController.IsStopMode = false;
     }
-
     public void SuperRunning()
     {
         //
     }
-
     public void Slide()
     {
         _animationController.SlideRun();
-        if (_animationController._animator.GetCurrentAnimatorStateInfo(0).normalizedTime > 1)
+        if (_animationController._animator.velocity == Vector3.zero)
         {
             _entityManager.SetWinMOD();
         }
     }
-
     public void GameOver()
     {
         _entityController.IsStopMode = true;

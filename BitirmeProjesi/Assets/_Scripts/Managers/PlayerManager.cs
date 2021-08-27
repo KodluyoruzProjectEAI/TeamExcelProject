@@ -4,12 +4,14 @@ using UnityEngine;
 
 public class PlayerManager : AManager,IEntityManager
 {
-    public static PlayerManager Instance;
+
+    public static event System.Action OnLoseGame;
 
     [SerializeField] ParticleSystem splashParticle;
+    public static PlayerManager Instance;
+    
     IEntityController _entityController;
     IProcess _process;
-    
     void Awake()
     {
         _entityController = FindObjectOfType<PlayerController>();
@@ -19,6 +21,7 @@ public class PlayerManager : AManager,IEntityManager
     void OnEnable()
     {
         MenuManager.OnStartGame += SetRunningMOD;
+        MenuManager.OnRestartGame += SetIdleMOD;
     }
     void Start()
     {
@@ -30,6 +33,7 @@ public class PlayerManager : AManager,IEntityManager
         {
             case State.Idle:
                 _process.Idle();
+                splashParticle.Stop();
                 break;
             case State.Running:
                 _process.Running();
@@ -42,6 +46,7 @@ public class PlayerManager : AManager,IEntityManager
                 break;
             case State.GameOver:
                 _process.GameOver();
+                OnLoseGame?.Invoke();
                 break;
             case State.Win:
                 _process.Win();
@@ -61,5 +66,6 @@ public class PlayerManager : AManager,IEntityManager
             Destroy(this.gameObject);
         }
     }
+    
 
 }
