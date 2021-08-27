@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class PlayerController : PlayerData, IEntityController
 {
-    PlayerManager _playerManager;
-    PlayerInput _playerInput;
+    ICollisionController _IcollisionController;
+    IEntityManager _IplayerManager;
     IHorizontalMover _IhorizontalMover;
     IVerticalMover _IverticalMover;
-    IPlayerSkills _IplayerSkills;
+    PlayerInput _playerInput;
     float inputHorValue;
 
     public CurrentState currentState;
@@ -23,8 +23,8 @@ public class PlayerController : PlayerData, IEntityController
         _playerInput = GetComponent<PlayerInput>();
         _IhorizontalMover = new HorizontalMover(this);
         _IverticalMover = new VerticalMover(this);
-        _IplayerSkills = new PlayerSkills(this);
-        _playerManager = FindObjectOfType<PlayerManager>();
+        _IplayerManager = FindObjectOfType<PlayerManager>();
+        _IcollisionController = new CollisionController(this,_IplayerManager);
     }
     void Update()
     {
@@ -42,23 +42,7 @@ public class PlayerController : PlayerData, IEntityController
     }
     void OnTriggerEnter(Collider collider)
     {
-        switch (collider.tag)
-        {
-            case "Collectable":
-                IsPower = true;
-                break;
-
-            case "SpeedUp":
-                _IplayerSkills.AddSpeed(10f);
-                break;
-            
-            case "Obstacle":
-                _IplayerSkills.RemoveSpeed(5f);
-                break;
-
-            case "FinishLine":
-                _playerManager.SetState("Slide");
-                break;
-        }
+        Debug.Log("Girdi");
+        _IcollisionController.Control(collider);
     }
 }

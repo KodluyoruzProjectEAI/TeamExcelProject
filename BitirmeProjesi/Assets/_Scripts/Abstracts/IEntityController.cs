@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public interface IEntityController 
-{   
+{
+    GameObject gameObject { get; }
     Rigidbody rb { get; }
     Transform transform { get; }
     float BoundX { get; }
-    public float VerticalSpeed{ get; set; }
-    public bool IsStopMode { get; set; }
-
+    float VerticalSpeed{ get; set; }
+    bool IsStopMode { get; set; }
+    bool IsPower { get; set; }
 }

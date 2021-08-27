@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class EnemyController:PlayerData,IEntityController
 {
-    EnemyManager _enemyManager;
-    EnemyRandomMover _enemyRandomMover;
+    IEntityManager _IenemyManager;
+    ICollisionController _IcollisionController;
     IHorizontalMover _IhorizontalMover;
     IVerticalMover _IverticalMover;
-    IPlayerSkills _IplayerSkills;
+    EnemyRandomMover _enemyRandomMover;
     int horizontalValue;
 
     public State state;
@@ -22,9 +22,9 @@ public class EnemyController:PlayerData,IEntityController
     {   
         _IhorizontalMover = new HorizontalMover(this);
         _IverticalMover = new VerticalMover(this);
-        _IplayerSkills = new PlayerSkills(this);
-        _enemyManager = GetComponent<EnemyManager>();
+        _IenemyManager = GetComponent<EnemyManager>();
         _enemyRandomMover = GetComponent<EnemyRandomMover>();
+        _IcollisionController = new CollisionController(this,_IenemyManager);
     }
     void Start()
     {
@@ -45,17 +45,6 @@ public class EnemyController:PlayerData,IEntityController
     }
     void OnTriggerEnter(Collider collider)
     {
-        switch (collider.tag)
-        {
-            case "SpeedUp":
-                _IplayerSkills.AddSpeed(10f);
-                break;
-            case "Obstacle":
-                _IplayerSkills.RemoveSpeed(5f);
-                break;
-            case "FinishLine":
-                _enemyManager.SetState("Slide");
-                break;
-        }
+        _IcollisionController.Control(collider);
     }
 }

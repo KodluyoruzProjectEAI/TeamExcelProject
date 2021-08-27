@@ -4,7 +4,7 @@ using UnityEngine;
 
 public abstract class AManager : MonoBehaviour
 {
-    public State currentState;
+    public State currentState { get; set; }
     public enum State
     {
         Idle,
@@ -14,14 +14,28 @@ public abstract class AManager : MonoBehaviour
         GameOver,
         Win
     }
-    public abstract void StartGame();
-    public abstract void Idle();
-    public abstract void Running();
-    public abstract void SuperRunning();
-    public abstract void Slide();
-    public abstract void GameOver();
-    public abstract void Win();
-    public abstract void SetState(string set);
-
-   
+    public void SetIdleMOD()
+    {
+        currentState = State.Idle;
+    }
+    public void SetRunningMOD()
+    {
+        currentState = State.Running;
+    }
+    public void SetSuperRunningMOD()
+    {
+        currentState = State.SuperRunning;
+    }
+    public void SetSlideMOD()
+    {
+        currentState = State.Slide;
+    }
+    public void SetGameOverMOD()
+    {
+        currentState = State.GameOver;
+    }
+    public void SetWinMOD()
+    {
+        currentState = State.Win;
+    }
 }
