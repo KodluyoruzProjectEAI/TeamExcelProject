@@ -193,7 +193,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: RESTART
+  m_Text: NEXT LEVEL
 --- !u!222 &317163924
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -973,7 +973,7 @@ GameObject:
   - component: {fileID: 1019256604}
   - component: {fileID: 1019256603}
   m_Layer: 5
-  m_Name: RestartButton
+  m_Name: NextLevelButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6936,7 +6936,15 @@ MonoBehaviour:
   PlayerBody: {fileID: 919132147661547908}
   LevelList:
   - {fileID: 8299779384792664115, guid: 20371852b0d8f174a9904ea65b9ad18d, type: 3}
+  - {fileID: 1324785689961498479, guid: 4f9196e1ff428574fa336a70e0887dc1, type: 3}
+  - {fileID: 1324785689961498479, guid: 165ea8c849b8a1143be554c4726cffc2, type: 3}
   - {fileID: 1324785689961498479, guid: 6e54c61e2b160e44eaf6c57be14152af, type: 3}
+  - {fileID: 1324785689961498479, guid: 0534a4fdbe864654eaa0a28e1984aa03, type: 3}
+  - {fileID: 1324785689961498479, guid: f880d2cc3e5396941a775ed5837df357, type: 3}
+  - {fileID: 1324785689961498479, guid: 9158f5f4809eb224990e35868ff78fd6, type: 3}
+  - {fileID: 1324785689961498479, guid: 2cb0bdfb04bcabe47b4c12d8e6ca7db0, type: 3}
+  - {fileID: 1324785689961498479, guid: b048e90c9443a1e4cbd952620f80ef38, type: 3}
+  - {fileID: 1324785689961498479, guid: 6302ddeb94b86414b80bb4d81cdc7644, type: 3}
 --- !u!4 &1997927139
 Transform:
   m_ObjectHideFlags: 0
@@ -7204,7 +7212,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1502c88217620c94ea3a41f68f867240, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  WinGameCanvas: {fileID: 682424607}
+  WinGameCanvas: {fileID: 827431930}
   LoseGameCanvas: {fileID: 682424607}
   SkillCanvas: {fileID: 1184230303}
 --- !u!4 &543450651870524222

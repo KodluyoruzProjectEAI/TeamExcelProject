@@ -9,14 +9,13 @@ using UnityEngine;
       int DeadID = Animator.StringToHash("Dead");
       int DanceID = Animator.StringToHash("Dance");
       int SlideRunID = Animator.StringToHash("SlideRun");
-
       public AnimationController(Animator animator)
       {
          _animator = animator;
       }
       public void Idle()
       {
-        _animator.ResetTrigger(DeadID);
+         _animator.ResetTrigger(DeadID);
          _animator.ResetTrigger(DanceID);
          _animator.SetTrigger(IdleID);
       }
@@ -36,13 +35,13 @@ using UnityEngine;
       }
       public void Dance()
       {
-        _animator.ResetTrigger(IdleID);
-        _animator.ResetTrigger(RunningID);
-        _animator.SetTrigger(DanceID);
+         _animator.ResetTrigger(IdleID);
+         _animator.ResetTrigger(RunningID);
+         _animator.SetTrigger(DanceID);
       }
       public void SlideRun()
       {
-        _animator.SetTrigger(SlideRunID);
+         _animator.SetTrigger(SlideRunID);
       }
 }
 
