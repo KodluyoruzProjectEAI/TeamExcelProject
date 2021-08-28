@@ -9,6 +9,7 @@ TagManager:
   - Obstacle
   - Door
   - Collectable
+  - Skill
   layers:
   - Default
   - TransparentFX

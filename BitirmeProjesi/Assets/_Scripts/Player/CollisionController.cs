@@ -29,7 +29,7 @@ public class CollisionController: ICollisionController
         }
         switch (collider.tag)
         {
-            case "Collectable":
+            case "Skill":
                 if (_IentityController.transform.GetComponent<PlayerController>())
                 {
                     _IentityController.IsPower = true;
@@ -46,6 +46,9 @@ public class CollisionController: ICollisionController
 
             case "FinishLine":
                 _IentityManager.SetSlideMOD();
+                break;
+
+            case "Collectable":
                 break;
         }
 
