@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 public class EnemyManager : AManager,IEntityManager
 {
-    [SerializeField] ParticleSystem splashParticle;
     IEntityController _entityController;
     IProcess _process;
+    PlayerParticle _playerParticle;
     void Awake()
     {
+        _playerParticle = GetComponentInChildren<PlayerParticle>();
         _entityController = GetComponent<IEntityController>();
         _process = new Process(_entityController,this);
     }
@@ -40,8 +41,15 @@ public class EnemyManager : AManager,IEntityManager
                 break;
             case State.Win:
                 _process.Win();
-                splashParticle.Play();
                 break;
+        }
+        if (currentState == State.Running && _entityController.VerticalSpeed >= _playerParticle.superRunBoundValue)
+        {
+            _playerParticle.superRunParticle.Play();
+        }
+        else
+        {
+            _playerParticle.superRunParticle.Stop();
         }
     }
 

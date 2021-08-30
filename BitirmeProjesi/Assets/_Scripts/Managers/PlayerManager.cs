@@ -4,17 +4,16 @@ using UnityEngine;
 
 public class PlayerManager : AManager,IEntityManager
 {
-
     public static event System.Action OnLoseGame;
-
-    [SerializeField] ParticleSystem splashParticle;
-    public static PlayerManager Instance;
     
+    public static PlayerManager Instance;
+    PlayerParticle _playerParticle;
     IEntityController _entityController;
     IProcess _process;
     void Awake()
     {
         _entityController = FindObjectOfType<PlayerController>();
+        _playerParticle = _entityController.transform.GetComponentInChildren<PlayerParticle>();
         _process = new Process(_entityController, this);
         StartSingleton();
     }
@@ -33,7 +32,6 @@ public class PlayerManager : AManager,IEntityManager
         {
             case State.Idle:
                 _process.Idle();
-                splashParticle.Stop();
                 break;
             case State.Running:
                 _process.Running();
@@ -50,8 +48,15 @@ public class PlayerManager : AManager,IEntityManager
                 break;
             case State.Win:
                 _process.Win();
-                splashParticle.Play();
                 break;
+        }
+        if (currentState == State.Running && _entityController.VerticalSpeed >= _playerParticle.superRunBoundValue)
+        {
+            _playerParticle.superRunParticle.Play();
+        }
+        else
+        {
+            _playerParticle.superRunParticle.Stop();
         }
     }
     void StartSingleton()
