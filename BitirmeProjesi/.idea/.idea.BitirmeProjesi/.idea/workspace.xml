@@ -3,11 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="e54f803a-6ecf-4e3e-b461-75f1cd9ec03d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.BitirmeProjesi/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BitirmeProjesi/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Game.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Game.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Player/PlayerParticle.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Player/PlayerParticle.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/UI/SpeedBar.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/UI/SpeedBar.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/zPACKAGES/Epic Toon FX/Demo/Scripts/ETFXButtonScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/zPACKAGES/Epic Toon FX/Demo/Scripts/ETFXButtonScript.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/zPACKAGES/TRAPS AND OBSTACLES/Traps-Obstacles/Particles/Materials/glow.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/zPACKAGES/TRAPS AND OBSTACLES/Traps-Obstacles/Particles/Materials/glow.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Managers/PlayerManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Managers/PlayerManager.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,9 +29,9 @@
       <option value="$PROJECT_DIR$/Assets/_Scripts/Water.cs" />
       <option value="$PROJECT_DIR$/Assets/_Scripts/WaterBehaviour.cs" />
       <option value="$PROJECT_DIR$/Assets/_Scripts/Abstracts/AManager.cs" />
-      <option value="$PROJECT_DIR$/Assets/_Scripts/Managers/PlayerManager.cs" />
       <option value="$PROJECT_DIR$/Assets/_Scripts/Player/PlayerParticle.cs" />
       <option value="$PROJECT_DIR$/Assets/_Scripts/UI/SpeedBar.cs" />
+      <option value="$PROJECT_DIR$/Assets/_Scripts/Managers/PlayerManager.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1waq52m88hEldhxKuAx736gE18f" />
@@ -90,7 +86,9 @@
       <workItem from="1629124778827" duration="2348000" />
       <workItem from="1629219972083" duration="1790000" />
       <workItem from="1629384557231" duration="1786000" />
-      <workItem from="1630293691622" duration="2661000" />
+      <workItem from="1630293691622" duration="2940000" />
+      <workItem from="1630334265710" duration="646000" />
+      <workItem from="1630337886363" duration="1173000" />
     </task>
     <servers />
   </component>

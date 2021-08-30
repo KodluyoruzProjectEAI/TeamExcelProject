@@ -8,6 +8,7 @@ public class PlayerManager : AManager,IEntityManager
     
     public static PlayerManager Instance;
     PlayerParticle _playerParticle;
+    [SerializeField] AudioSource _superRunClip;
     IEntityController _entityController;
     IProcess _process;
     void Awake()
@@ -53,6 +54,7 @@ public class PlayerManager : AManager,IEntityManager
         if (currentState == State.Running && _entityController.VerticalSpeed >= _playerParticle.superRunBoundValue)
         {
             _playerParticle.superRunParticle.Play();
+            _superRunClip.Play();
         }
         else
         {
