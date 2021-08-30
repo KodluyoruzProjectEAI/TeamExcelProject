@@ -5,6 +5,10 @@ using UnityEngine;
 public class SpeedBar : MonoBehaviour
 {
     [SerializeField] SpriteRenderer frontRenderer;
+    
+    [SerializeField] ParticleSystem speedParticle;
+    [SerializeField] PlayerManager _playerManager;
+    
     [SerializeField] float speedLimit;
     IEntityController _entityController;
     float spriteValue;
@@ -25,6 +29,15 @@ public class SpeedBar : MonoBehaviour
         {
            firstValue = Mathf.Lerp(firstValue, _entityController.VerticalSpeed, Time.deltaTime * 10);
            SetValue();  
+        }
+
+        if (_entityController.VerticalSpeed >= 60 && _playerManager.currentState == AManager.State.Running)
+        {
+            speedParticle.Play();
+        }
+        else
+        {
+            speedParticle.Stop();
         }
     }
     void SetValue()
