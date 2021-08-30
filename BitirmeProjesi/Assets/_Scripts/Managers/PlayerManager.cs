@@ -5,8 +5,9 @@ using UnityEngine;
 public class PlayerManager : AManager,IEntityManager
 {
     public static event System.Action OnLoseGame;
-    
     public static PlayerManager Instance;
+    public float Point { get; set; }
+    public float BonusPoint { get; set; }
     PlayerParticle _playerParticle;
     [SerializeField] AudioSource _superRunClip;
     IEntityController _entityController;
@@ -33,6 +34,8 @@ public class PlayerManager : AManager,IEntityManager
         {
             case State.Idle:
                 _process.Idle();
+                BonusPoint = 0;
+                Point = 0;
                 break;
             case State.Running:
                 _process.Running();

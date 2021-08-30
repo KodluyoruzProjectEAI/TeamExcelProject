@@ -6,6 +6,7 @@ public class CollisionController: ICollisionController
     IEntityController _IentityController;
     IEntityManager _IentityManager;
     IPlayerSkills _IplayerSkills;
+    float goldBugTimer;
     public CollisionController(IEntityController entityController, IEntityManager entityManager)
     {
         _IentityController = entityController;
@@ -14,6 +15,7 @@ public class CollisionController: ICollisionController
     }
     public void Control(Collider collider)
     {
+        //COIL
         if (collider.GetComponentInParent<Coil>())
         {
             switch (collider.GetComponentInParent<Coil>().CurrentState)
@@ -27,6 +29,33 @@ public class CollisionController: ICollisionController
             }
             return;
         }
+        ///ALTIN
+        if (collider.GetComponent<GemController>())
+        {
+            if (_IentityController.transform.GetComponent<PlayerController>())
+            {
+                if (Time.time > goldBugTimer + 0.2f)
+                {
+                    GemController gemController = collider.GetComponent<GemController>();
+                    gemController.IsFollow = true;
+                    PlayerManager.Instance.Point += 10;
+                    goldBugTimer = Time.time;
+                }
+
+            }
+        }
+        //FINISHLINE
+        if (PlayerManager.Instance.currentState == PlayerManager.State.Win)
+        {
+            if (_IentityController.transform.GetComponent<PlayerController>())
+            {
+                int point = collider.GetComponent<FinishLine>().value;
+                PlayerManager.Instance.BonusPoint = point+1;
+                Debug.Log("Bonus:" + PlayerManager.Instance.BonusPoint);
+            }
+           
+        }
+        //TAGS
         switch (collider.tag)
         {
             case "Skill":

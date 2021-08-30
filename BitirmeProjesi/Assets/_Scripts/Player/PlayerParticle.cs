@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class PlayerParticle : MonoBehaviour
 {
-    //public ParticleSystem splashParticle;
-
     public ParticleSystem superRunParticle;
     public float superRunBoundValue;
 }

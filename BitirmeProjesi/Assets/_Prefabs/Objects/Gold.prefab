@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 33000013580865012}
   - component: {fileID: 23000012220716874}
   - component: {fileID: 114000012797500034}
+  - component: {fileID: 227112909657079749}
   - component: {fileID: 1582148783696983511}
   m_Layer: 0
   m_Name: Gold
@@ -107,6 +108,19 @@ MonoBehaviour:
   endScale: {x: 0.5, y: 0.5, z: 0.5}
   scaleSpeed: 1
   scaleRate: 0.5
+--- !u!114 &227112909657079749
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000010880751780}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29914c2e6d0be0f41973e4c5429e61b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  IsFollow: 0
 --- !u!135 &1582148783696983511
 SphereCollider:
   m_ObjectHideFlags: 0

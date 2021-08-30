@@ -9,13 +9,16 @@ public class MenuManager : ASingleton<MenuManager>
 {
     public static event System.Action OnStartGame;
     public static event System.Action OnRestartGame;
+
     [SerializeField] GameObject WinGameCanvas;
     [SerializeField] GameObject LoseGameCanvas;
     [SerializeField] GameObject SkillCanvas;
+
     PlayerManager _playerManager;
     PlayerController _playerController;
     GameManager _gameManager;
     bool activatedMenu;
+    float playerTotalPoint;
     void Awake()
     {
         StartSingleton(this);
@@ -25,6 +28,7 @@ public class MenuManager : ASingleton<MenuManager>
     }
     void Update()
     {
+        Debug.Log("TotalPoint:"+playerTotalPoint);
         if (activatedMenu) { return; }
         switch (_playerManager.currentState)
         {
@@ -51,12 +55,20 @@ public class MenuManager : ASingleton<MenuManager>
     IEnumerator ActivatedWinGameCanvas() 
     {
         yield return new WaitForSeconds(2f);
+        CalculatePoint();
         WinGameCanvas.SetActive(true);
     }
     IEnumerator ActivatedGameOverCanvas()
     {
         yield return new WaitForSeconds(2f);
         LoseGameCanvas.SetActive(true);
+    }
+    void CalculatePoint()
+    {
+        Debug.Log("Point:" + _playerManager.Point);
+        Debug.Log("BonusPoint:" + _playerManager.BonusPoint);
+
+        playerTotalPoint = _playerManager.Point * _playerManager.BonusPoint;
     }
     public void Play()
     {

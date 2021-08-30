@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class FinishLine : MonoBehaviour
 {
-    [SerializeField] int value;
+    public int value;
     TextMeshPro text;
     void Awake()
     {
