@@ -49,7 +49,11 @@ public class CollisionController: ICollisionController
         {
             if (_IentityController.transform.GetComponent<PlayerController>())
             {
-                int point = collider.GetComponent<FinishLine>().value;
+                int point = 0;
+                if (collider.GetComponent<FinishLine>()) 
+                {
+                    point = collider.GetComponent<FinishLine>().value;
+                }
                 PlayerManager.Instance.BonusPoint = point+1;
                 Debug.Log("Bonus:" + PlayerManager.Instance.BonusPoint);
             }

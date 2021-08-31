@@ -8,6 +8,7 @@ public class PlayerController : PlayerData, IEntityController
     IEntityManager _IplayerManager;
     IHorizontalMover _IhorizontalMover;
     IVerticalMover _IverticalMover;
+    
     PlayerInput _playerInput;
     float inputHorValue;
 

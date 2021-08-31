@@ -43,4 +43,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35760b842ea4ed34ba305e0fc0d357e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  splashParticle: {fileID: 0}

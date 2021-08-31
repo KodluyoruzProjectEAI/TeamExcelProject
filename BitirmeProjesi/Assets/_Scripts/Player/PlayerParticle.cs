@@ -5,5 +5,6 @@ using UnityEngine;
 public class PlayerParticle : MonoBehaviour
 {
     public ParticleSystem superRunParticle;
+    public ParticleSystem idleParticle;
     public float superRunBoundValue;
 }
