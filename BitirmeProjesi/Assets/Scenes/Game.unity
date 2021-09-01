@@ -852,7 +852,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &827431931
 RectTransform:
   m_ObjectHideFlags: 0
@@ -12638,6 +12638,7 @@ MonoBehaviour:
   WinGameCanvas: {fileID: 827431930}
   LoseGameCanvas: {fileID: 682424607}
   SkillCanvas: {fileID: 1184230303}
+  GoldText: {fileID: 322070424}
 --- !u!4 &543450651870524222
 Transform:
   m_ObjectHideFlags: 0
