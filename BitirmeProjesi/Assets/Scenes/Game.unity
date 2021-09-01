@@ -12129,10 +12129,6 @@ MonoBehaviour:
   - {fileID: 1324785689961498479, guid: 6e54c61e2b160e44eaf6c57be14152af, type: 3}
   - {fileID: 1324785689961498479, guid: 0534a4fdbe864654eaa0a28e1984aa03, type: 3}
   - {fileID: 1324785689961498479, guid: f880d2cc3e5396941a775ed5837df357, type: 3}
-  - {fileID: 1324785689961498479, guid: 9158f5f4809eb224990e35868ff78fd6, type: 3}
-  - {fileID: 1324785689961498479, guid: 2cb0bdfb04bcabe47b4c12d8e6ca7db0, type: 3}
-  - {fileID: 1324785689961498479, guid: b048e90c9443a1e4cbd952620f80ef38, type: 3}
-  - {fileID: 1324785689961498479, guid: 6302ddeb94b86414b80bb4d81cdc7644, type: 3}
 --- !u!4 &1997927139
 Transform:
   m_ObjectHideFlags: 0

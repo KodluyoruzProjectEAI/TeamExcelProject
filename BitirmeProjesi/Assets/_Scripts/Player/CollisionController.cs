@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-public class CollisionController: ICollisionController
+public class CollisionController:MonoBehaviour, ICollisionController
 {
     IEntityController _IentityController;
     IEntityManager _IentityManager;
@@ -55,7 +55,6 @@ public class CollisionController: ICollisionController
                     point = collider.GetComponent<FinishLine>().value;
                 }
                 PlayerManager.Instance.BonusPoint = point+1;
-                Debug.Log("Bonus:" + PlayerManager.Instance.BonusPoint);
             }
            
         }
@@ -65,6 +64,7 @@ public class CollisionController: ICollisionController
             case "Skill":
                 if (_IentityController.transform.GetComponent<PlayerController>())
                 {
+                    Destroy(collider.gameObject);
                     _IentityController.IsPower = true;
                 }
                 break;
