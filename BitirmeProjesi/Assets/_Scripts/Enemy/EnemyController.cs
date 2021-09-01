@@ -33,6 +33,10 @@ public class EnemyController:PlayerData,IEntityController
     void Update()
     {
         horizontalValue = _enemyRandomMover.RandomMove();
+        if (VerticalSpeed <= 0)
+        {
+            _IenemyManager.SetGameOverMOD();
+        }
     }
     void FixedUpdate()
     {
@@ -46,5 +50,9 @@ public class EnemyController:PlayerData,IEntityController
     void OnTriggerEnter(Collider collider)
     {
         _IcollisionController.Control(collider);
+    }
+    void OnCollisionEnter(Collision collision)
+    {
+        _IcollisionController.Control(collision.collider);
     }
 }

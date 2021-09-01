@@ -36,5 +36,6 @@ public class GameManager : ASingleton<GameManager>
         PlayerBody.transform.position = Player.transform.position;
         Player.currentState = PlayerController.CurrentState.Center;
         Player.VerticalSpeed = DataPlayer.VerticalSpeed;
+        Player.IsPower = false;
     }
 }
