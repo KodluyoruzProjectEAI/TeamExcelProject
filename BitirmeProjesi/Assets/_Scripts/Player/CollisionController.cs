@@ -34,11 +34,10 @@ public class CollisionController:MonoBehaviour, ICollisionController
         {
             if (_IentityController.transform.GetComponent<PlayerController>())
             {
-                if (Time.time > goldBugTimer + 0.2f)
+                if (Time.time > goldBugTimer + 0.1f)
                 {
                     GemController gemController = collider.GetComponent<GemController>();
                     gemController.IsFollow = true;
-                    PlayerManager.Instance.Point += 10;
                     goldBugTimer = Time.time;
                 }
 

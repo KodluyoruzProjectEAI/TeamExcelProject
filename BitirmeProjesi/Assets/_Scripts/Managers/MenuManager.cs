@@ -13,12 +13,15 @@ public class MenuManager : ASingleton<MenuManager>
     [SerializeField] GameObject WinGameCanvas;
     [SerializeField] GameObject LoseGameCanvas;
     [SerializeField] GameObject SkillCanvas;
+    [SerializeField] Text GoldText;
 
     PlayerManager _playerManager;
     PlayerController _playerController;
     GameManager _gameManager;
-    bool activatedMenu;
+    bool activatedMenu,calculateLerp;
     float playerTotalPoint;
+    float t;
+    int pointer;
     void Awake()
     {
         StartSingleton(this);
@@ -28,8 +31,13 @@ public class MenuManager : ASingleton<MenuManager>
     }
     void Update()
     {
-        Debug.Log("TotalPoint:"+playerTotalPoint);
-        if (activatedMenu) { return; }
+        if (calculateLerp)
+        {
+            CalculateLerp();
+        }
+        if (activatedMenu) {
+            return;
+        }
         switch (_playerManager.currentState)
         {
             case PlayerManager.State.Win:
@@ -42,7 +50,6 @@ public class MenuManager : ASingleton<MenuManager>
                 activatedMenu = true;
                 break;
         }
-        
         if (_playerController.IsPower)
         {
             SkillCanvas.SetActive(true);
@@ -57,6 +64,7 @@ public class MenuManager : ASingleton<MenuManager>
         yield return new WaitForSeconds(2f);
         CalculatePoint();
         WinGameCanvas.SetActive(true);
+        calculateLerp = true;
     }
     IEnumerator ActivatedGameOverCanvas()
     {
@@ -65,10 +73,17 @@ public class MenuManager : ASingleton<MenuManager>
     }
     void CalculatePoint()
     {
-        Debug.Log("Point:" + _playerManager.Point);
-        Debug.Log("BonusPoint:" + _playerManager.BonusPoint);
-
         playerTotalPoint = _playerManager.Point * _playerManager.BonusPoint;
+    }
+    void CalculateLerp()
+    {
+        pointer = (int) Mathf.Lerp(0f, playerTotalPoint,t);
+        t += Time.deltaTime * 0.5f;
+        GoldText.text =pointer.ToString();
+        if (pointer == playerTotalPoint)
+        {
+            calculateLerp = false;
+        }
     }
     public void Play()
     {
@@ -77,12 +92,19 @@ public class MenuManager : ASingleton<MenuManager>
     public void RestartLevel()
     {
         _gameManager.CreateLevel(false);
-        activatedMenu = false;
+        ResetValues();
     }
     public void NextLevel()
     {
         _gameManager.CreateLevel(true);
+        ResetValues();
+    }
+    void ResetValues()
+    {
         activatedMenu = false;
+        calculateLerp = false;
+        pointer = 0;
+        t = 0;
     }
 
 }

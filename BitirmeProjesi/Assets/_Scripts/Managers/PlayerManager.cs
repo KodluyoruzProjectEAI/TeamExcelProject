@@ -31,6 +31,7 @@ public class PlayerManager : AManager,IEntityManager
     }
     void LateUpdate()
     {
+        Debug.Log(PlayerManager.Instance.Point);
         switch (currentState)
         {
             case State.Idle:
