@@ -5,6 +5,7 @@ using UnityEngine;
 public class Coil : MonoBehaviour
 {
     [SerializeField] TeslaCoilData[] data;
+    [SerializeField] GameObject[] texts;
     [field: SerializeField] public State CurrentState { get; private set; }
 
     Light lightObj;
@@ -32,9 +33,13 @@ public class Coil : MonoBehaviour
         {
             case State.Blue:
                 index = 0;
+                texts[0].SetActive(true);
+                texts[1].SetActive(false);
                 break;
             case State.Red:
                 index = 1;
+                texts[1].SetActive(true);
+                texts[0].SetActive(false);
                 break;
         }
         materials[0] = data[index].GlassMaterial;

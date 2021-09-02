@@ -68,7 +68,7 @@ public class PlayerManager : AManager,IEntityManager
                 _process.Win();
                 break;
         }
-        if (currentState == State.GameOver /*|| currentState==State.Win*/)
+        if (currentState == State.GameOver)
         {
             SoundManager.Instance.StopBackgroundSound();
         }

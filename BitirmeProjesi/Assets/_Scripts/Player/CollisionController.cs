@@ -27,6 +27,7 @@ public class CollisionController:MonoBehaviour, ICollisionController
                         SoundManager.Instance.PlaySlowerSound();
                     }
                     break;
+
                 case Coil.State.Blue:
                     _IplayerSkills.AddSpeed(15);
                     if (_IentityController.transform.GetComponent<PlayerController>())
@@ -60,10 +61,9 @@ public class CollisionController:MonoBehaviour, ICollisionController
                 if (collider.GetComponent<FinishLine>()) 
                 {
                     point = collider.GetComponent<FinishLine>().value;
+                    PlayerManager.Instance.BonusPoint = point;
                 }
-                PlayerManager.Instance.BonusPoint = point+1;
             }
-           
         }
         //TAGS
         switch (collider.tag)
@@ -77,7 +77,7 @@ public class CollisionController:MonoBehaviour, ICollisionController
                 break;
 
             case "SpeedUp":
-                _IplayerSkills.AddSpeed(10f);
+                _IplayerSkills.AddSpeed(5f);
                 if (_IentityController.transform.GetComponent<PlayerController>())
                 {
                     SoundManager.Instance.PlayFasterSounds();
@@ -85,7 +85,7 @@ public class CollisionController:MonoBehaviour, ICollisionController
                 break;
 
             case "Obstacle":
-                _IplayerSkills.RemoveSpeed(10f);
+                _IplayerSkills.RemoveSpeed(5f);
                 if (_IentityController.transform.GetComponent<PlayerController>())
                 {
                     SoundManager.Instance.PlaySlowerSound();

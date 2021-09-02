@@ -15,6 +15,7 @@ public class MenuManager : ASingleton<MenuManager>
     [SerializeField] GameObject SkillCanvas;
     [SerializeField] Text GoldText;
     [SerializeField] GameObject NextLevelButton;
+    [SerializeField] Text InGameGoldText;
 
     PlayerManager _playerManager;
     PlayerController _playerController;
@@ -32,6 +33,7 @@ public class MenuManager : ASingleton<MenuManager>
     }
     void Update()
     {
+        InGameGoldText.text = _playerManager.Point.ToString();
         if (calculateLerp)
         {
             CalculateLerp();
@@ -109,5 +111,4 @@ public class MenuManager : ASingleton<MenuManager>
         pointer = 0;
         t = 0;
     }
-
 }

@@ -837,7 +837,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2431568734343504675, guid: f3839499bb2d62146917c71f1eeed277, type: 3}
       propertyPath: <VerticalSpeed>k__BackingField
-      value: 20
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 2431568734343504679, guid: f3839499bb2d62146917c71f1eeed277, type: 3}
       propertyPath: m_Name
@@ -1191,7 +1191,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2431568734343504675, guid: f3839499bb2d62146917c71f1eeed277, type: 3}
       propertyPath: <VerticalSpeed>k__BackingField
-      value: 20
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 2431568734343504679, guid: f3839499bb2d62146917c71f1eeed277, type: 3}
       propertyPath: m_Name
