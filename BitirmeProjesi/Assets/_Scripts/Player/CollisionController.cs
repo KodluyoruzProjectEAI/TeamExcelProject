@@ -22,9 +22,17 @@ public class CollisionController:MonoBehaviour, ICollisionController
             {
                 case Coil.State.Red:
                     _IplayerSkills.RemoveSpeed(10);
+                    if (_IentityController.transform.GetComponent<PlayerController>())
+                    {
+                        SoundManager.Instance.PlaySlowerSound();
+                    }
                     break;
                 case Coil.State.Blue:
                     _IplayerSkills.AddSpeed(15);
+                    if (_IentityController.transform.GetComponent<PlayerController>())
+                    {
+                        SoundManager.Instance.PlayFasterSounds();
+                    }
                     break;
             }
             return;
@@ -70,10 +78,15 @@ public class CollisionController:MonoBehaviour, ICollisionController
 
             case "SpeedUp":
                 _IplayerSkills.AddSpeed(10f);
+                if (_IentityController.transform.GetComponent<PlayerController>())
+                {
+                    SoundManager.Instance.PlayFasterSounds();
+                }
                 break;
 
             case "Obstacle":
-                _IplayerSkills.RemoveSpeed(5f);
+                _IplayerSkills.RemoveSpeed(10f);
+                SoundManager.Instance.PlaySlowerSound();
                 break;
 
             case "FinishLine":
@@ -81,8 +94,12 @@ public class CollisionController:MonoBehaviour, ICollisionController
                 break;
 
             case "Collectable":
+                if (_IentityController.transform.GetComponent<PlayerController>())
+                {
+                    SoundManager.Instance.PlayCollectableSound();
+                }
                 break;
         }
 
-    } 
+    }
 }

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -50,6 +51,7 @@ public class PlayerManager : AManager,IEntityManager
                 _process.Slide();
                 break;
             case State.GameOver:
+                SoundManager.Instance.PlayDeathbellSound();
                 _process.GameOver();
                 OnLoseGame?.Invoke();
                 break;
@@ -79,6 +81,9 @@ public class PlayerManager : AManager,IEntityManager
             Destroy(this.gameObject);
         }
     }
-    
 
+    private void Update()
+    {
+        Debug.Log(currentState);
+    }
 }

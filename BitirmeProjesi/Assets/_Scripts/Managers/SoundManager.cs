@@ -1,10 +1,17 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class SoundManager : ASingleton<SoundManager>
 {
     [SerializeField] AudioSource superRunSound;
+    [SerializeField] AudioSource collectableSound;
+    [SerializeField] AudioSource deathbellSound;
+    [SerializeField] AudioSource fasterSound , faster2Sound;
+    [SerializeField] AudioSource slowerSound;
+    [SerializeField] AudioSource advideoSound;
     void Awake()
     {
         StartSingleton(this);
@@ -15,5 +22,33 @@ public class SoundManager : ASingleton<SoundManager>
         {
             superRunSound.Play();
         }
+    }
+    public void PlayCollectableSound()
+    {
+        collectableSound.Play();
+    }
+    public void PlayDeathbellSound()
+    {
+        deathbellSound.Play();
+    }
+    public void PlayFasterSounds()
+    {
+        int rando = Random.Range(0, 2);
+        if (rando == 0)
+        {
+            fasterSound.Play();
+        }
+        else
+        {
+            faster2Sound.Play();
+        }
+    }
+    public void PlayadvideoSound()
+    {
+        advideoSound.Play();
+    }
+    public void PlaySlowerSound()
+    {
+        slowerSound.Play();
     }
 }

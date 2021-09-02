@@ -3,7 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="e54f803a-6ecf-4e3e-b461-75f1cd9ec03d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.BitirmeProjesi/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BitirmeProjesi/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Game.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Game.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/UI.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/UI.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SuperRunSound.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SuperRunSound.mp3.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Managers/PlayerManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Managers/PlayerManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Managers/SoundManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Managers/SoundManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Player/CollisionController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Player/CollisionController.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,6 +37,8 @@
       <option value="$PROJECT_DIR$/Assets/_Scripts/Abstracts/AManager.cs" />
       <option value="$PROJECT_DIR$/Assets/_Scripts/Player/PlayerParticle.cs" />
       <option value="$PROJECT_DIR$/Assets/_Scripts/UI/SpeedBar.cs" />
+      <option value="$PROJECT_DIR$/Assets/_Scripts/Player/CollisionController.cs" />
+      <option value="$PROJECT_DIR$/Assets/_Scripts/Managers/SoundManager.cs" />
       <option value="$PROJECT_DIR$/Assets/_Scripts/Managers/PlayerManager.cs" />
     </changedPaths>
   </component>
@@ -88,7 +96,9 @@
       <workItem from="1629384557231" duration="1786000" />
       <workItem from="1630293691622" duration="2940000" />
       <workItem from="1630334265710" duration="646000" />
-      <workItem from="1630337886363" duration="1173000" />
+      <workItem from="1630337886363" duration="1199000" />
+      <workItem from="1630360320240" duration="633000" />
+      <workItem from="1630513707652" duration="4504000" />
     </task>
     <servers />
   </component>
