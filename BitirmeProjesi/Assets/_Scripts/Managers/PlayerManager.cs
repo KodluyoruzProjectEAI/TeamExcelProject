@@ -12,7 +12,7 @@ public class PlayerManager : AManager,IEntityManager
     PlayerParticle _playerParticle;
     IEntityController _entityController;
     IProcess _process;
-    bool IsGameOver,IsWin;
+    bool IsGameOver,IsWin,IsSuperRun;
     void Awake()
     {
         _entityController = FindObjectOfType<PlayerController>();
@@ -75,12 +75,17 @@ public class PlayerManager : AManager,IEntityManager
 
         if (currentState == State.Running && _entityController.VerticalSpeed >= _playerParticle.superRunBoundValue)
         {
-            SoundManager.Instance.PlaySuperRunSound();
+            if (!IsSuperRun)
+            {
+                SoundManager.Instance.PlaySuperRunSound();
+                IsSuperRun = true;
+            }
             _playerParticle.superRunParticle.Play();
         }
         else
         {
             _playerParticle.superRunParticle.Stop();
+            IsSuperRun = false;
         }
     }
     void StartSingleton()
