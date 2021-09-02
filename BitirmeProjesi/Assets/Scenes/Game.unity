@@ -12375,6 +12375,18 @@ PrefabInstance:
       propertyPath: m_LocalPosition.x
       value: 1.5
       objectReference: {fileID: 0}
+    - target: {fileID: 1512307586382968788, guid: 20371852b0d8f174a9904ea65b9ad18d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1707937052597383980, guid: 20371852b0d8f174a9904ea65b9ad18d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1707937052597383980, guid: 20371852b0d8f174a9904ea65b9ad18d, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 25.05
+      objectReference: {fileID: 0}
     - target: {fileID: 3328546447272183771, guid: 20371852b0d8f174a9904ea65b9ad18d, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.5
@@ -13490,7 +13502,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   superRunParticle: {fileID: 864430102}
   idleParticle: {fileID: 1440927874}
-  superRunBoundValue: 65
+  superRunBoundValue: 50
 --- !u!1 &2111791032
 GameObject:
   m_ObjectHideFlags: 0
