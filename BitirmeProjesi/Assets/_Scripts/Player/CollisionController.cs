@@ -86,18 +86,14 @@ public class CollisionController:MonoBehaviour, ICollisionController
 
             case "Obstacle":
                 _IplayerSkills.RemoveSpeed(10f);
-                SoundManager.Instance.PlaySlowerSound();
+                if (_IentityController.transform.GetComponent<PlayerController>())
+                {
+                    SoundManager.Instance.PlaySlowerSound();
+                }
                 break;
 
             case "FinishLine":
                 _IentityManager.SetSlideMOD();
-                break;
-
-            case "Collectable":
-                if (_IentityController.transform.GetComponent<PlayerController>())
-                {
-                    SoundManager.Instance.PlayCollectableSound();
-                }
                 break;
         }
 

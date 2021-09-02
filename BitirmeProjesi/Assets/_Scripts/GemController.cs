@@ -22,6 +22,7 @@ public class GemController : MonoBehaviour
         {
             if (!selectedPoint)
             {
+                SoundManager.Instance.PlayCollectableSound();
                 PlayerManager.Instance.Point += 10;
                 distance = PlayerManager.Instance.Point / 70;
                 selectedPoint = true;

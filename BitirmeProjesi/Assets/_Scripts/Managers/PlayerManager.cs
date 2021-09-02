@@ -5,15 +5,14 @@ using UnityEngine;
 
 public class PlayerManager : AManager,IEntityManager
 {
-    public static event System.Action OnLoseGame;
     public static PlayerManager Instance;
-
     public float Point { get; set; }
     public float BonusPoint { get; set; }
 
     PlayerParticle _playerParticle;
     IEntityController _entityController;
     IProcess _process;
+    bool IsGameOver,IsWin;
     void Awake()
     {
         _entityController = FindObjectOfType<PlayerController>();
@@ -32,7 +31,6 @@ public class PlayerManager : AManager,IEntityManager
     }
     void LateUpdate()
     {
-        Debug.Log(PlayerManager.Instance.Point);
         switch (currentState)
         {
             case State.Idle:
@@ -40,6 +38,9 @@ public class PlayerManager : AManager,IEntityManager
                 _playerParticle.idleParticle.Play();
                 BonusPoint = 0;
                 Point = 0;
+                IsGameOver = false;
+                IsWin = false;
+                SoundManager.Instance.PlayBackgroundSound();
                 break;
             case State.Running:
                 _process.Running();
@@ -51,14 +52,27 @@ public class PlayerManager : AManager,IEntityManager
                 _process.Slide();
                 break;
             case State.GameOver:
-                SoundManager.Instance.PlayDeathbellSound();
+                if (!IsGameOver)
+                {
+                    SoundManager.Instance.PlayDeathbellSound();
+                    IsGameOver = true;
+                }
                 _process.GameOver();
-                OnLoseGame?.Invoke();
                 break;
             case State.Win:
+                if (!IsWin)
+                {
+                    SoundManager.Instance.PlayWinSound();
+                    IsWin = true;
+                }
                 _process.Win();
                 break;
         }
+        if (currentState == State.GameOver /*|| currentState==State.Win*/)
+        {
+            SoundManager.Instance.StopBackgroundSound();
+        }
+
         if (currentState == State.Running && _entityController.VerticalSpeed >= _playerParticle.superRunBoundValue)
         {
             SoundManager.Instance.PlaySuperRunSound();
@@ -80,10 +94,5 @@ public class PlayerManager : AManager,IEntityManager
         {
             Destroy(this.gameObject);
         }
-    }
-
-    private void Update()
-    {
-        Debug.Log(currentState);
     }
 }

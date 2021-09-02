@@ -14,6 +14,7 @@ public class MenuManager : ASingleton<MenuManager>
     [SerializeField] GameObject LoseGameCanvas;
     [SerializeField] GameObject SkillCanvas;
     [SerializeField] Text GoldText;
+    [SerializeField] GameObject NextLevelButton;
 
     PlayerManager _playerManager;
     PlayerController _playerController;
@@ -83,10 +84,12 @@ public class MenuManager : ASingleton<MenuManager>
         if (pointer == playerTotalPoint)
         {
             calculateLerp = false;
+            NextLevelButton.SetActive(true);
         }
     }
     public void Play()
     {
+        NextLevelButton.SetActive(false);
         OnStartGame?.Invoke();
     }
     public void RestartLevel()

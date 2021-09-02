@@ -12,9 +12,24 @@ public class SoundManager : ASingleton<SoundManager>
     [SerializeField] AudioSource fasterSound , faster2Sound;
     [SerializeField] AudioSource slowerSound;
     [SerializeField] AudioSource advideoSound;
+    [SerializeField] AudioSource winSound;
     void Awake()
     {
         StartSingleton(this);
+    }
+    public void PlayWinSound()
+    {
+        if (!winSound.isPlaying)
+        {
+            winSound.Play();
+        }
+    }
+    public void PlayBackgroundSound()
+    {
+        if (!advideoSound.isPlaying)
+        {
+            advideoSound.Play();
+        }
     }
     public void PlaySuperRunSound()
     {
@@ -29,7 +44,10 @@ public class SoundManager : ASingleton<SoundManager>
     }
     public void PlayDeathbellSound()
     {
-        deathbellSound.Play();
+        if (!deathbellSound.isPlaying)
+        {
+            deathbellSound.Play();
+        }
     }
     public void PlayFasterSounds()
     {
@@ -43,12 +61,15 @@ public class SoundManager : ASingleton<SoundManager>
             faster2Sound.Play();
         }
     }
-    public void PlayadvideoSound()
-    {
-        advideoSound.Play();
-    }
     public void PlaySlowerSound()
     {
-        slowerSound.Play();
+        if (PlayerManager.Instance.currentState != PlayerManager.State.GameOver)
+        {
+            slowerSound.Play();
+        }
+    }
+    public void StopBackgroundSound()
+    {
+        advideoSound.Stop();
     }
 }
